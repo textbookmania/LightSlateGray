@@ -13,8 +13,13 @@ Router.configure({
 Router.route('/', {
   name: 'Home'
 });
+
 Router.route('/profile/personal/edit', {
   name: 'ProfileEdit'
+});
+
+Router.route('/profile/personal', {
+  name: 'ProfilePage'
 });
 
 Router.route('/textbooks', {
