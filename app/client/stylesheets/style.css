@@ -65,6 +65,12 @@ h2
     width: 33%;
 }
 
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: steelblue;
 }
