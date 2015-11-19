@@ -13,17 +13,28 @@ Router.configure({
 Router.route('/', {
   name: 'Home'
 });
-
-Router.route('/list', {
-  name: 'ListStuff'
-});
-
-Router.route('/add', {
-  name: 'AddStuff'
-});
-
 Router.route('/profile/personal/edit', {
   name: 'ProfileEdit'
+});
+
+Router.route('/textbooks', {
+  name: 'Textbook'
+});
+
+Router.route('/buyoffer', {
+  name: 'BuyOffer'
+});
+
+Router.route('/selloffer', {
+  name: 'SellOffer'
+});
+
+Router.route('/matching', {
+  name: 'Matching'
+});
+
+Router.route('/help', {
+  name: 'Help'
 });
 
 Router.route('/stuff/:_id', {
