@@ -22,6 +22,9 @@ Router.route('/add', {
   name: 'AddStuff'
 });
 
+Router.route('/profile/personal/edit', {
+  name: 'ProfileEdit'
+});
 
 Router.route('/stuff/:_id', {
   name: 'EditStuff',
