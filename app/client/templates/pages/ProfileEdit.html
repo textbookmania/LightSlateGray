@@ -2,7 +2,7 @@
   <form class="main form page">
     <div class="form-group">
       <label class="control-label" for="profile-image">Profile Image</label>
-      <input type="url" class="form-control" id="profile-image" value="{{ currentUser.profile.profileImageLink }}" placeholder="Profile image url">
+      <input type="url" class="form-control" id="profile-image" value="{{ currentUser.profile.profileImage }}" placeholder="Profile image url">
     </div>
     <div class="form-group">
       <label class="control-label" for="first-name">First Name</label>
@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
       <label class="control-label" for="input-email">Email</label>
-      <input type="email" class="form-control" id="input-email" value="{{ currentUser.emails }}" placeholder="name@domain.com">
+      <input type="email" class="form-control" id="input-email" value="{{ currentUser.emails.[0].address }}" placeholder="name@domain.com">
     </div>
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
   </form>

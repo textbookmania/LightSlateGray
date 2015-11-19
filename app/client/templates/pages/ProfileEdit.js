@@ -9,11 +9,6 @@ Template.ProfileEdit.events({
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstName": $(e.target).find('[id=first-name]').val()}});
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": $(e.target).find('[id=last-name]').val()}});
 
-    var newEmail = $(e.target).find('[id=input-email]').val();
-
-    /*if (Accounts.findUserByEmail(newEmail) === Meteor.user() || !Accounts.findUserByEmail(newEmail)) {
-      Accounts.removeEmail(Meteor.userId(), Meteor.user().profile.Emails);
-    }
-    Accounts.addEmail(Meteor.userId(), newEmail);*/
+    Meteor.call('changeEmail', $(e.target).find('[id=input-email]').val());
   }
 });
