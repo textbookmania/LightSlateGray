@@ -1,11 +1,11 @@
-stuff = "Stuff";  // avoid typos, this string occurs many times.
+stuff = "stuff";  // avoid typos, this string occurs many times.
 
 Stuff = new Mongo.Collection(stuff);
 
 Meteor.methods({
   /**
-   * Invoked by AutoForm to add a new Stuff record.
-   * @param doc The Stuff document.
+   * Invoked by AutoForm to add a new Textbook record.
+   * @param doc The Textbook document.
    */
   addStuff: function(doc) {
     check(doc, Stuff.simpleSchema());
@@ -13,8 +13,8 @@ Meteor.methods({
   },
   /**
    *
-   * Invoked by AutoForm to update a Stuff record.
-   * @param doc The Stuff document.
+   * Invoked by AutoForm to update a Textbook record.
+   * @param doc The Textbook document.
    * @param docID It's ID.
    */
   editStuff: function(doc, docID) {
@@ -32,7 +32,7 @@ if (Meteor.isServer) {
 
 
 /**
- * Create the schema for Stuff
+ * Create the schema for Textbook
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */

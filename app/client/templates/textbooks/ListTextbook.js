@@ -1,9 +1,9 @@
-Template.ListStuff.helpers({
+Template.ListTextbook.helpers({
 
   /**
    * @returns {*} All of the Textbook documents.
    */
-  stuffList: function () {
+  textbookList: function () {
     return Textbook.find();
   }
 });

@@ -8,7 +8,7 @@ var stuffSeeds = [
 ];
 
 /**
- * Initialize the Stuff collection if empty with seed data.
+ * Initialize the Textbook collection if empty with seed data.
  */
 if (Stuff.find().count() === 0) {
   _.each(stuffSeeds,  function(stuff) {

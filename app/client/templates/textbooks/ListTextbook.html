@@ -1,22 +1,28 @@
-<template name="ListStuff">
+<template name="ListTextbook">
   {{#IfLoggedIn}}
     <div class="well">
 
       <table class="table">
         <thead>
         <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Edit</th>
+          <th>Class</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Edition</th>
+          <th>Publisher</th>
         </tr>
         </thead>
 
         <tbody>
-        {{#each stuffList}}
+        {{#each textbookList}}
           <tr>
-            <td>{{name}}</td>
-            <td>{{quantity}}</td>
-            <td><a href="{{pathFor 'EditStuff'}}">Edit</a></td>
+            <td>{{class}}</td>
+            <td>{{title}}</td>
+            <td>{{author}}</td>
+            <td>{{isbn}}</td>
+            <td>{{edition}}</td>
+            <td>{{publisher}}</td>
           </tr>
         {{/each}}
         </tbody>
