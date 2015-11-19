@@ -56,7 +56,15 @@ h2
     color: black;
 }
 
+.dropdown-menu > li > a {
+    text-align: center;
+}
+
 .col-md-3
 {
     width: 33%;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: steelblue;
 }
