@@ -1,11 +1,12 @@
 body
 {
-    background-color: #365197;
+    background-color: #FCFCFA;
     font-family: Roboto, sans-serif;
+    color: #304253;
 }
 .header-image
 {
-    background-image: url('images/Capture.jpg');
+    background-image: url('images/cover-image.jpg');
     background-size: cover;
     height: 200px;
 }
@@ -13,6 +14,7 @@ body
 .navbar
 {
     border-radius: 0px;
+    height: 50px;
 }
 
 .navbar-inverse
@@ -23,10 +25,13 @@ body
 
 .navbar-inverse .navbar-nav>li>a
 {
-    color: black;
+    color: #304253;
     font-size: 16px;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: whitesmoke;
+}
 
 .well
 {
