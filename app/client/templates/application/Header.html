@@ -18,7 +18,12 @@
           <li><a href="{{ pathFor 'Home' }}">Textbook Mania</a></li>
           <li><a href="{{ pathFor 'Students' }}">Students</a></li>
           <li><a href="{{ pathFor 'ListTextbook' }}">Textbook</a></li>
-          <li><a href="{{ pathFor 'BuyOffer' }}">Buy Offer</a></li>
+          <li><a data-toggle="dropdown" class="dropdown-toggle">Buy Offers<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ pathFor 'AddBuyOffer' }}">Add Buy Offer</a></li>
+              <li><a href="{{ pathFor 'ListBuyOffer' }}">List Buy Offers</a></li>
+            </ul>
+          </li>
           <li><a href="{{ pathFor 'SellOffer' }}">Sell Offer</a></li>
           <li><a href="{{ pathFor 'Matching' }}">Matching</a></li>
           <li><a href="{{ pathFor 'Help' }}">Help</a></li>

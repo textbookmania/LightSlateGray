@@ -38,8 +38,12 @@ Router.route('/edittextbooks', {
   name: 'EditTextbook'
 });
 
-Router.route('/buyoffer', {
-  name: 'BuyOffer'
+Router.route('/addbuyoffer', {
+  name: 'AddBuyOffer'
+});
+
+Router.route('/listbuyoffer', {
+  name: 'ListBuyOffer'
 });
 
 Router.route('/selloffer', {
@@ -54,7 +58,7 @@ Router.route('/help', {
   name: 'Help'
 });
 
-Router.route('/stuff/:_id', {
-  name: 'EditStuff',
-  data: function() { return Textbook.findOne(this.params._id); }
+Router.route('/editbuyoffer/:_id', {
+  name: 'EditBuyOffer',
+  data: function() { return Offer.findOne(this.params._id); }
 });

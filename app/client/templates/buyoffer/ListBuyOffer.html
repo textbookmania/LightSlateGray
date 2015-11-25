@@ -1,0 +1,37 @@
+<template name="ListBuyOffer">
+    {{#IfLoggedIn}}
+    <div class="well">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Offer</th>
+                <th>Condition</th>
+                <th>Expiration</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each buyofferList}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{isbn}}</td>
+                <td>{{offer}}</td>
+                <td>{{condition}}</td>
+                <td>{{expiration}}</td>
+                <td><a href="{{pathFor 'EditBuyOffer'}}">Edit</a></td>
+                <td><a class="delete" href="#">Delete</a></td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+    {{/IfLoggedIn}}
+</template>
