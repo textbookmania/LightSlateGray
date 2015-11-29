@@ -1,33 +1,54 @@
 <template name="ListTextbook">
   {{#IfLoggedIn}}
-    <div class="well">
 
-      <table class="table">
-        <thead>
-        <tr>
-          <th>Class</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>ISBN</th>
-          <th>Edition</th>
-          <th>Publisher</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {{#each textbookList}}
+  {{#each textbookList}}
+  <div id="ListTextbookRow" class="row">
+    <div id="ListTextbookWell" class="well">
+      <div id="ListTextbookCol" class="col">
+        <div id="ListTextbookImageRow" class="row">
+          <a href="#">
+            <img src={{coverimage}}/>
+          </a>
+        </div>
+        <div id="ListTextbookButtonRow" class="row">
+          <a href = "#" class = "btn btn-success" role = "button">View Offers</a>
+        </div>
+      </div>
+      <div id="ListTextbookInfo" class="col">
+        <table class="ListTextbookInfoTable">
           <tr>
-            <td>{{class}}</td>
-            <td>{{title}}</td>
-            <td>{{author}}</td>
-            <td>{{isbn}}</td>
-            <td>{{edition}}</td>
-            <td>{{publisher}}</td>
-          </tr>
-        {{/each}}
-        </tbody>
-      </table>
+            <td>
+              <h3>Title:</h3>
 
+              <p>{{title}}</p>
+            </td>
+            <td>
+              <h3>ISBN:</h3>
+
+              <p>{{isbn}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Author:</h3>
+
+              <p>{{author}}</p>
+            </td>
+            <td>
+              <h3>Condition:</h3>
+
+              <p>{{condition}}</p>
+            </td>
+          </tr>
+          <tr>
+            <h3>Description:</h3>
+
+            <p>{{description}}</p>
+          </tr>
+        </table>
+      </div>
     </div>
+  </div>
+  {{/each}}
   {{/IfLoggedIn}}
 </template>

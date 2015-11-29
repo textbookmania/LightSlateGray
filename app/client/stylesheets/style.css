@@ -1,101 +1,183 @@
-body
-{
-    background-color: #FCFCFA;
-    font-family: Roboto, sans-serif;
-    color: #304253;
+body {
+  background-color: #FCFCFA;
+  font-family: Roboto, sans-serif;
+  color: #304253;
 }
 
-.header-image
-{
-    background-image: url('images/cover-image.jpg');
-    background-size: cover;
-    height: 200px;
+.header-image {
+  background-image: url('images/cover-image.jpg');
+  background-size: cover;
+  height: 200px;
 }
 
 #students-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 #textbook-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 #buyoffer-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 #selloffer-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 #matching-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 #help-link .well:hover {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
-.navbar
-{
-    border-radius: 0px;
-    height: 50px;
+.navbar {
+  border-radius: 0px;
+  height: 50px;
 }
 
-.navbar-inverse
-{
-    background-color: #B0C4DE;
-    border-color: #B0C4DE;
+.navbar-inverse {
+  background-color: #B0C4DE;
+  border-color: #B0C4DE;
 }
 
-.navbar-inverse .navbar-nav>li>a
-{
-    color: #304253;
-    font-size: 16px;
+.navbar-inverse .navbar-nav > li > a {
+  color: #304253;
+  font-size: 16px;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
-.well
-{
-    background-color: #B0C4DE;
-    border-color: #B0C4DE;
+.well {
+  background-color: #B0C4DE;
+  border-color: #B0C4DE;
 }
 
-h1
-{
-    font-size: 30px;
-    text-align: center;
+h1 {
+  font-size: 30px;
+  text-align: center;
 }
 
-h2
-{
-    font-size: 18px;
-    text-align: center;
+h2 {
+  font-size: 18px;
+  text-align: center;
 }
 
-.text-muted
-{
-    color: black;
+.text-muted {
+  color: black;
 }
 
 .dropdown-menu > li > a {
-    text-align: center;
+  text-align: center;
 }
 
-.col-md-3
-{
-    width: 33%;
+.col-md-3 {
+  width: 33%;
 }
 
 .center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: steelblue;
+  background-color: steelblue;
 }
+
+.ListTextbookInfoTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.ListTextbookInfoTable.tr {
+  width: 100%;
+}
+
+.ListTextbookInfoTable.td {
+  width: 50%;
+}
+
+.ListTextbookInfoTable h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ListTextbookInfoTable p {
+  color: black;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+#ListTextbookRow {
+  border-color: transparent;
+  background-color: transparent;
+  padding: 5px;
+}
+
+#ListTextbookRow.row {
+  height: 30vh;
+}
+
+#ListTextbookCol.col {
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+#ListTextbookInfo.col {
+  max-height: 100%;
+  max-width: 100%;
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+#ListTextbookImageRow.row {
+  max-height: 100%;
+  max-width: 100%;
+  padding-bottom: 10px;
+  height: 90%;
+}
+
+#ListTextbookImageRow a {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#ListTextbookImageRow a img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#ListTextbookWell.well {
+  height: 100%;
+  background-color: lightsteelblue;
+  border-color: transparent;
+  overflow: hidden;
+}
+
+#ListTextbookButtonRow.row {
+  max-height: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+#ListTextbookButton a {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+

@@ -83,12 +83,21 @@ Textbook.attachSchema(new SimpleSchema({
     }
   },
   publisher: {
-    label: "Name",
+    label: "Publisher",
     type: String,
     optional: true,
     autoform: {
       group: textbook,
       placeholder: "Publisher of Book"
+    }
+  },
+  condition: {
+    label: "Condition",
+    type: String,
+    optional: false,
+    autoform: {
+      group: textbook,
+      placeholder: "Condition of Book (Excellent, Good, Fair, Poor)"
     }
   },
   coverimage: {
