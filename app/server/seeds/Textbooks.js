@@ -39,7 +39,7 @@ var textbookSeeds = [
 
   {class: "ICS 419", title: "The Design of Everyday Things", author: "Donald A. Norman ", isbn: "465067107", edition: "Reprint edition", publisher: "Basic Books", condition: "Good", coverimage: "http://images.amazon.com/images/P/0465067107.01.LZ.jpg", description: ""},
 
-  {class: "ICS 462", title: "Presenting to Win: The Art of Telling Your Story, Updated and Expanded Edition", author: "Jerry Weissman g", isbn: "9780137144174", edition: "1", publisher: "FT Press", condition: "Good", coverimage: "http://images.amazon.com/images/P/0137144172.01.LZ.jpg", description: ""},
+  {class: "ICS 462", title: "Presenting to Win: The Art of Telling Your Story, Updated and Expanded Edition", author: "Jerry Weissman", isbn: "9780137144174", edition: "1", publisher: "FT Press", condition: "Good", coverimage: "http://images.amazon.com/images/P/0137144172.01.LZ.jpg", description: ""},
 
   {class: "ICS 462", title: "Artificial Intelligence for Games", author: "Ian Millington & John Funge", isbn: "9780123747310", edition: "2", publisher: "CRC Press", condition: "Good", coverimage: "http://images.amazon.com/images/P/0123747317.01.LZ.jpg", description: ""},
 

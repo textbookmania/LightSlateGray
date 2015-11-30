@@ -137,7 +137,7 @@ h2 {
 #ListTextbookCol.col {
   float: left;
   width: 30%;
-  height: 100%;
+  height: 96%;
 }
 
 #ListTextbookInfo.col {
@@ -145,7 +145,7 @@ h2 {
   max-width: 100%;
   float: left;
   width: 70%;
-  height: 100%;
+  height: 96%;
 }
 
 #ListTextbookImageRow.row {
@@ -168,10 +168,17 @@ h2 {
 }
 
 #ListTextbookWell.well {
+  padding-top: 0px;
+  border-radius: 0px;
   height: 100%;
   background-color: white;
-  border-color: transparent;
+  border-color: black;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bot-width: 2px;
   overflow: hidden;
+  box-shadow: none;
 }
 
 #ListTextbookButtonRow.row {
