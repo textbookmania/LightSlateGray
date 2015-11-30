@@ -1,7 +1,12 @@
 body {
-  background-color: #FCFCFA;
+  background-color: lightsteelblue;
   font-family: Roboto, sans-serif;
   color: #304253;
+}
+
+#background-page {
+  padding: 20px;
+  background-color: white;
 }
 
 .header-image {
@@ -36,16 +41,17 @@ body {
 
 .navbar {
   border-radius: 0px;
+  margin-bottom: 0;
   height: 50px;
 }
 
 .navbar-inverse {
-  background-color: #B0C4DE;
-  border-color: #B0C4DE;
+  background-color: #23527c;
+  border-style: none;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #304253;
+  color: ghostwhite;
   font-size: 16px;
 }
 
@@ -163,7 +169,7 @@ h2 {
 
 #ListTextbookWell.well {
   height: 100%;
-  background-color: lightsteelblue;
+  background-color: white;
   border-color: transparent;
   overflow: hidden;
 }
