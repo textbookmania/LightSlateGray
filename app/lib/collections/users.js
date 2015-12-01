@@ -23,7 +23,7 @@ Meteor.publish("userProfile",function(username){
 
     return Meteor.users.find(user._id,{
       fields:{
-        "profile":0
+        "profile":1
       }
     });
   }
@@ -46,6 +46,12 @@ Schema.UserProfile = new SimpleSchema({
     type: String,
     label: "Profile image url",
     regEx: SimpleSchema.RegEx.Url,
+    optional: true
+  },
+  shareEmail: {
+    type: boolean,
+    label: "Share email with others?",
+    defaultValue: false,
     optional: true
   }
 });
