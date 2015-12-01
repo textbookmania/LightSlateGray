@@ -1,6 +1,5 @@
 <template name="EditSellOffer">
   {{#IfLoggedIn}}
-  <div class="well">
     {{> quickForm
     collection="SellOffer"
     template="bootstrap3-horizontal"
@@ -12,6 +11,5 @@
     meteormethod="editSellOffer"
     doc=this
     buttonContent="Update"}}
-  </div>
   {{/IfLoggedIn}}
 </template>
