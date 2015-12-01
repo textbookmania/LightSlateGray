@@ -32,7 +32,7 @@ To deploy it use:
 meteor deploy my_app_name.meteor.com
 ```
 
-An example is currently deployed [here](http://textbookmania.github.io/LightSteelBlue/).
+An example is currently deployed [here](http://lightsteelblue-m2.meteor.com/).
 
 Refer to our [Installation and Deployment]() section for more details.
 
