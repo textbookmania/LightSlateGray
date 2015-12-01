@@ -6,7 +6,9 @@
 
 Router.configure({
   layoutTemplate: 'Layout',
-  waitOn: function() { return Meteor.subscribe("Textbook"); },
+  waitOn: function () {
+    return Meteor.subscribe("Textbook");
+  },
   loadingTemplate: 'Loading'
 });
 
@@ -56,9 +58,14 @@ Router.route('/addtextbooks', {
   name: 'AddTextbook'
 });
 
-Router.route('/edittextbooks', {
-  name: 'EditTextbook'
+Router.route('/edittextbooks/', {
+  name: 'EditTextbook',
+  path: '/edittextbooks/:_isbn',
+  data: function() {
+    return this.params._isbn;
+  }
 });
+
 
 Router.route('/addbuyoffer', {
   name: 'AddBuyOffer'

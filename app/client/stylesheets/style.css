@@ -205,3 +205,8 @@ body {
   margin: 0 auto;
 }
 
+.AddTextbookContainer {
+  border-color: transparent;
+  background-color: transparent;
+  padding: 5px;
+}
