@@ -14,3 +14,13 @@ AutoForm.hooks({
     }
   }
 });
+
+Template.EditTextbook.helpers({
+
+  /**
+   * @returns {*} All of the Stuff documents.
+   */
+  getTextbook: function () {
+    return Textbook.findOne({isbn13: this.toString()});
+  }
+});
