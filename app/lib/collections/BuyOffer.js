@@ -28,7 +28,7 @@ Meteor.methods({
     BuyOffer.update({_id: docID}, doc);
   },
 
-  deleteBuyOffer: function(docID){
+  deleteBuyOffer: function (docID) {
     BuyOffer.remove(docID);
   }
 });
@@ -55,10 +55,10 @@ BuyOffer.attachSchema(new SimpleSchema({
       afFieldInput: {
         firstOption: "Select Textbook"
       },
-      options:function(){
-        var textBook = _.pluck(Textbook.find({}, {fields:{'title':1}}).fetch(), 'title');
-        return _.map(textBook, function(value){
-          return{
+      options: function () {
+        var textBook = _.pluck(Textbook.find({}, {fields: {'title': 1}}).fetch(), 'title');
+        return _.map(textBook, function (value) {
+          return {
             label: value,
             value: value
           }
@@ -79,7 +79,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     type: Date,
     label: "Expiration",
     optional: true,
-    autoValue: function(){
+    autoValue: function () {
       d = new Date();
       d.setDate(d.getDate() + expirationPeriod);
       return d;
@@ -97,7 +97,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     optional: false,
     autoform: {
       group: buyoffer,
-      afFieldInput:{
+      afFieldInput: {
         firstOption: "Select Condition"
       },
       options: [
