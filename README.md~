@@ -7,6 +7,9 @@ Not willing to buy a new textbook?
 Tired of waiting for friends to reply?  
 Then try LightSteelBlue for easy match making with satisfaction for both parties.   
 
+##Student's Profile
+Only allowed student users have access to the offers. Students can create profiles, and this allows their offers to be linked to their profiles. Our system also requires CAS Authentication for security.
+
 ##Buy and Sell Books  
 Books are bought and sold through offers available. The "Buy Offers" are for students looking for a textbook, and the "Sell Offers" are for students trying to sell their textbook.  
  
@@ -32,9 +35,9 @@ Refer to our [Installation and Deployment]() section for more details.
 
 
 #Help  
-Please refer to our [User's Guide]() for help.
-Or for developers, please refer to our [Developer's Guide]().
-Otherwise, refer to our [Contacts]() section.
+Please refer to our [User's Guide](https://github.com/textbookmania/LightSteelBlue/wiki/User's-Guide) for help.
+Or for developers, please refer to our [Developer's Guide](https://github.com/textbookmania/LightSteelBlue/wiki/Developer's-Guide).
+Otherwise, refer to our [Contact Us](https://github.com/textbookmania/LightSteelBlue/wiki/Contact-Us) section.
 
 #Credits  
 ##Meteor

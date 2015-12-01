@@ -7,6 +7,9 @@ Not willing to buy a new textbook?
 Tired of waiting for friends to reply?  
 Then try LightSteelBlue for easy match making with satisfaction for both parties.   
 
+##Student's Profile
+Only allowed student users have access to the offers. Students can create profiles, and this allows their offers to be linked to their profiles. Our system also requires CAS Authentication for security.
+
 ##Buy and Sell Books  
 Books are bought and sold through offers available. The "Buy Offers" are for students looking for a textbook, and the "Sell Offers" are for students trying to sell their textbook.  
  
