@@ -51,7 +51,7 @@ body {
 .navbar {
   border-radius: 0px;
   margin-bottom: 0;
-  height: 50px;
+  min-height: 50px;
 }
 
 .navbar-inverse {
