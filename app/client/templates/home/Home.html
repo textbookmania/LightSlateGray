@@ -1,69 +1,8 @@
 <template name="Home">
 
   {{#if currentUser}}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <a href="#" id="students-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Students</h1>
 
-            <h2>Create a profile and connect with other students.</h2>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="{{ pathFor 'ListTextbook' }}" id="textbook-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Textbook</h1>
 
-            <h2>View our books. If you don't see what you need, add it!</h2>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="#" id="buyoffer-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Buy Offer</h1>
-
-            <h2>Looking for a used book? List it here. We'll help find a seller.</h2>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <a href="#" id="selloffer-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Sell Offer</h1>
-
-            <h2>Got used textbooks to sell? List it here. We'll help find a buyer.</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-3">
-        <a href="#" id="matching-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Matching</h1>
-
-            <h2>We'll scour our database for potential buyers and sellers.</h2>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-3">
-        <a href="#" id="help-link" style="text-decoration: none">
-          <div class="well">
-            <h1>Help</h1>
-
-            <h2>Got a question about the website? Hopefully we've got the answers.</h2>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
 
   {{else}}
   No one is logged in.
