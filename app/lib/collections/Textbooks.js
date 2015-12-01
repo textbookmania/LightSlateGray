@@ -64,13 +64,22 @@ Textbook.attachSchema(new SimpleSchema({
       placeholder: "Author of Book"
     }
   },
-  isbn: {
-    label: "ISBN",
+  isbn10: {
+    label: "ISBN10",
+    type: String,
+    optional: true,
+    autoform: {
+      group: textbook,
+      placeholder: "ISBN10 of Book"
+    }
+  },
+  isbn13: {
+    label: "ISBN13",
     type: String,
     optional: false,
     autoform: {
       group: textbook,
-      placeholder: "ISBN of Book"
+      placeholder: "ISBN13 of Book"
     }
   },
   edition: {
@@ -91,15 +100,6 @@ Textbook.attachSchema(new SimpleSchema({
       placeholder: "Publisher of Book"
     }
   },
-  condition: {
-    label: "Condition",
-    type: String,
-    optional: false,
-    autoform: {
-      group: textbook,
-      placeholder: "Condition of Book (Excellent, Good, Fair, Poor)"
-    }
-  },
   coverimage: {
     label: "Cover Image",
     type: String,
@@ -107,15 +107,6 @@ Textbook.attachSchema(new SimpleSchema({
     autoform: {
       group: textbook,
       placeholder: "Cover Image of Book"
-    }
-  },
-  description: {
-    label: "Description",
-    type: String,
-    optional: true,
-    autoform: {
-      group: textbook,
-      placeholder: "Description of Book"
     }
   }
 }));

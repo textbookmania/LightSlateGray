@@ -5,5 +5,5 @@ Template.ListTextbook.helpers({
    */
   textbookList: function () {
     return Textbook.find();
-  }
+  },
 });
