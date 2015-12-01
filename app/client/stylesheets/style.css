@@ -9,6 +9,15 @@ body {
   background-color: white;
 }
 
+#profile-username {
+  text-align: center;
+  font-size: 30px;
+}
+
+#profile-username .btn{
+  margin-left: 20px;
+}
+
 .header-image {
   background-image: url('images/cover-image.jpg');
   background-size: cover;
@@ -64,15 +73,6 @@ body {
   border-color: #B0C4DE;
 }
 
-h1 {
-  font-size: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 18px;
-  text-align: center;
-}
 
 .text-muted {
   color: black;

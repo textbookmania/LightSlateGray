@@ -10,5 +10,6 @@ Template.ProfileEdit.events({
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": $(e.target).find('[id=last-name]').val()}});
 
     Meteor.call('changeEmail', $(e.target).find('[id=input-email]').val());
+    Router.go('ProfilePage', data=Meteor.user());
   }
 });

@@ -3,8 +3,7 @@
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ currentUser.username }}<b class="caret"></b></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="{{ pathFor 'ProfilePage' }}">Profile</a></li>
-        <li><a href="{{ pathFor 'ProfileEdit' }}">Profile Edit</a></li>
+        <li><a href="{{ pathFor 'ProfilePage' data=currentUser }}">Profile</a></li>
         <li><a href="#" class="btn cas-logout">Logout</a></li>
       </ul>
     </li>

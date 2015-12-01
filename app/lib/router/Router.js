@@ -18,8 +18,18 @@ Router.route('/profile/personal/edit', {
   name: 'ProfileEdit'
 });
 
-Router.route('/profile/personal', {
-  name: 'ProfilePage'
+Router.route("/profile/:username", {
+  name: 'ProfilePage',
+
+  waitOn:function(){
+    return Meteor.subscribe("userProfile",this.params.username);
+  },
+  data:function(){
+    var username=Router.current().params.username;
+    return Meteor.users.findOne({
+      username:username
+    });
+  }
 });
 
 Router.route('/students', {
