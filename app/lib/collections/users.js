@@ -23,6 +23,8 @@ Meteor.publish("userProfile",function(username){
 
     return Meteor.users.find(user._id,{
       fields:{
+        "username":1,
+        "emails":1,
         "profile":1
       }
     });
@@ -49,7 +51,7 @@ Schema.UserProfile = new SimpleSchema({
     optional: true
   },
   shareEmail: {
-    type: boolean,
+    type: Boolean,
     label: "Share email with others?",
     defaultValue: false,
     optional: true
