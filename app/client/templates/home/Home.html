@@ -1,16 +1,32 @@
 <template name="Home">
 
   {{#if currentUser}}
-
-
-
+  <div class="container-fluid">
+    <div class="row">
+      <div id="home-main1">
+        <span id="home-title">Textbook Mania</span>
+        <span id="home-slogan"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>Give a book a new home.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{ pathFor 'AddSellOffer' }}"><img src="/images/book-pages.jpg" class="img-rounded img-responsive" id="home-page-image"></a>
+        <h2>Offer a book.</h2>
+      </div>
+      <div class="col-md-6">
+        <a href="{{ pathFor 'ListTextbook' }}"><img src="/images/book-glasses.jpg" class="img-rounded img-responsive" id="home-page-image2"></a>
+        <h2>Look for a book.</h2>
+      </div>
+    </div>
+  </div>
   {{else}}
   <div class="welcome-image">
     <img src="/images/welcome-book-image.jpg" class="img-responsive">
 
     <h2><span>Welcome to Textbook Mania</span></h2>
-    <p>Textbook Mania helps students buy and sell their textbooks.<br>
-      Login with a UH account to start looking for offers.</p>
+    <p>Looking to sell your textbooks?<br>
+      Looking to buy textbooks for cheap?<br>
+    Login with a UH account and start looking for offers.</p>
   </div>
   {{/if}}
 

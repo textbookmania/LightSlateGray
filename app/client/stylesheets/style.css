@@ -45,7 +45,7 @@ body {
   background: rgb(0, 0, 0); /* fallback color */
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .welcome-image p {
@@ -57,11 +57,46 @@ body {
   max-width: 600px;
   margin-top: 0;
   color: whitesmoke;
-  font: bold 20px/20px Helvetica, Sans-Serif;
+  font: bold 20px/40px Helvetica, Sans-Serif;
   background: rgb(0, 0, 0); /* fallback color */
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  border-radius: 0px;
+  border-radius: 3px;
+  line-height: 1.5;
+}
+
+#home-main1 {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 70px;
+}
+
+#home-main1 .glyphicon-triangle-right {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+#home-slogan {
+  padding: 15px;
+  font-size: 28px;
+  margin-left: 0px;
+  color: #23527c;
+  font-weight: bold;
+}
+
+#home-title {
+  border-color: #23527c;
+  border-radius: 7px;
+  padding: 6px;
+  border-style: solid;
+  border-width: 5px;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+#home-page-image img{
+  float: left;
+  display: block;
 }
 
 .navbar {
