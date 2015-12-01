@@ -1,6 +1,7 @@
 #LightSteelBlue  
+![cover image](https://raw.githubusercontent.com/textbookmania/LightSteelBlue/master/doc/lightsteelblue-homepage.PNG)  
 LightSteelBlue is a collection of textbook offers. Students can easily create offers to sell or buy a book. Offers are also immediately matched for simple satisfaction.  
-![cover image](https://raw.githubusercontent.com/textbookmania/LightSteelBlue/master/doc/lightsteelblue-homepage.PNG)
+
 
 #Why LightSteelBlue? 
 Not willing to buy a new textbook?  
@@ -30,6 +31,8 @@ To deploy it use:
 ```
 meteor deploy my_app_name.meteor.com
 ```
+
+An example is currently deployed [here](lightsteelblue.meteor.com).
 
 Refer to our [Installation and Deployment]() section for more details.
 
