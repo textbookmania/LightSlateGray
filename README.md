@@ -28,8 +28,13 @@ To deploy it use:
 meteor deploy my_app_name.meteor.com
 ```
 
+Refer to our [Installation and Deployment]() section for more details.
+
+
 #Help  
-Please refer to our User Guide, and developers can refer to the Development section of the User Guide.  
+Please refer to our [User's Guide](https://github.com/textbookmania/LightSteelBlue/wiki/User's-Guide) for help.
+Or for developers, please refer to our [Developer's Guide](https://github.com/textbookmania/LightSteelBlue/wiki/Developer's-Guide).
+Otherwise, refer to our [Contact Us](https://github.com/textbookmania/LightSteelBlue/wiki/Contact-Us) section.
 
 #Credits  
 ##Meteor
