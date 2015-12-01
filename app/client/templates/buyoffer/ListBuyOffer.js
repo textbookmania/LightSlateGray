@@ -8,7 +8,7 @@ Template.ListBuyOffer.helpers({
      * @returns {*} All of the Textbook documents.
      */
     buyofferList: function () {
-        return Offer.find();
+        return BuyOffer.find();
     }
 });
 
@@ -17,7 +17,7 @@ Template.ListBuyOffer.events({
         e.preventDefault();
         if (confirm("Delete this buy offer?")) {
             var currentBuyOfferId = this._id;
-            Meteor.call("deleteOffer", currentBuyOfferId);
+            Meteor.call("deleteBuyOffer", currentBuyOfferId);
             Router.go('ListBuyOffer');
         }
     }
