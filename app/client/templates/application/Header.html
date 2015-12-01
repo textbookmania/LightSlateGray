@@ -24,7 +24,12 @@
               <li><a href="{{ pathFor 'ListBuyOffer' }}">List Buy Offers</a></li>
             </ul>
           </li>
-          <li><a href="{{ pathFor 'SellOffer' }}">Sell Offer</a></li>
+          <li><a href="" data-toggle="dropdown" class="dropdown-toggle">Sell Offers<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ pathFor 'AddSellOffer' }}">Add Sell Offer</a></li>
+              <li><a href="{{ pathFor 'ListSellOffer' }}">List Sell Offers</a></li>
+            </ul>
+          </li>
           <li><a href="{{ pathFor 'Help' }}">Help</a></li>
         </ul>
 
