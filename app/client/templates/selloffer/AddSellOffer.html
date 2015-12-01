@@ -1,6 +1,5 @@
 <template name="AddSellOffer">
   {{#IfLoggedIn}}
-  <div class="well">
     {{> quickForm
     collection="SellOffer"
     template="bootstrap3-horizontal"
@@ -11,6 +10,5 @@
     type="method"
     meteormethod="addSellOffer"
     resetOnSuccess=true}}
-  </div>
   {{/IfLoggedIn}}
 </template>

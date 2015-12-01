@@ -1,17 +1,15 @@
 <template name="EditBuyOffer">
-    {{#IfLoggedIn}}
-    <div class="well">
-        {{> quickForm
-        collection="BuyOffer"
-        template="bootstrap3-horizontal"
-        label-class="col-sm-2"
-        input-col-class="col-sm-10"
+  {{#IfLoggedIn}}
+    {{> quickForm
+    collection="BuyOffer"
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
 
-        id="EditBuyOfferForm"
-        type="method-update"
-        meteormethod="editBuyOffer"
-        doc=this
-        buttonContent="Update"}}
-    </div>
-    {{/IfLoggedIn}}
+    id="EditBuyOfferForm"
+    type="method-update"
+    meteormethod="editBuyOffer"
+    doc=this
+    buttonContent="Update"}}
+  {{/IfLoggedIn}}
 </template>
