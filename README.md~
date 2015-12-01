@@ -19,14 +19,13 @@ Books are matched by offers available. Once an offer is made, a match is immedia
 3. Go into the app folder  
 4. Run Meteor  
 To run it locally use:  
-'''
+```
 meteor --settings ../config/settings.development.json
-'''
-
+```
 To deploy it use:  
-'''
+```
 meteor deploy my_app_name.meteor.com
-'''
+```
 
 #Help  
 Please refer to our User Guide, and developers can refer to the Development section of the User Guide.  

@@ -18,6 +18,7 @@ Books are matched by offers available. Once an offer is made, a match is immedia
 2. Extract and go into the extracted folder  
 3. Go into the app folder  
 4. Run Meteor  
+  
 To run it locally use:  
 ```
 meteor --settings ../config/settings.development.json
