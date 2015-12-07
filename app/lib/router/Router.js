@@ -28,7 +28,7 @@ Router.route('/', {
   name: 'Home'
 });
 
-Router.route('/profile/personal/edit', {
+Router.route('/profile/edit', {
   name: 'ProfileEdit'
 });
 
