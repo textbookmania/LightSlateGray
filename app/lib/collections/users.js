@@ -67,7 +67,7 @@ Schema.User = new SimpleSchema({
   // you can specify [String] as the type
   roles: {
     type: [String],
-    allowedValues: ['admin', 'user', 'tester', 'banned'],
+    allowedValues: ['admin', 'user', 'tester', 'banned', 'role-manager'],
     optional: true
   }
 });

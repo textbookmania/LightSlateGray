@@ -1,0 +1,20 @@
+<template name="RoleManager">
+  <form class="main form page">
+    <div class="form-group">
+      <label class="control-label" for="add-remove">Type</label>
+      <select class="form-control" id="add-remove">
+        <option>Add</option>
+        <option>Remove</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="users-name">Name</label>
+      <input type="text" class="form-control" id="users-name" value="" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="role-name">Role</label>
+      <input type="text" class="form-control" id="role-name" value="" placeholder="Role to be added or removed.">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+  </form>
+</template>

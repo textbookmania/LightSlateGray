@@ -109,6 +109,9 @@ var casTicket = function (req, token, callback) {
    else {
      Roles.addUsersToRoles(user.userId, 'user');
    }
+   if (_.contains(Meteor.settings.role_manager, result.id)) {
+     Roles.addUsersToRoles(user.userId, 'role-manager');
+   }
 
   return user;
 });

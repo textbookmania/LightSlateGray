@@ -46,6 +46,10 @@ Router.route("/profile/:username", {
   }
 });
 
+Router.route('/rolemanager', {
+  name: 'RoleManager'
+});
+
 Router.route('/students', {
   name: 'Students'
 });

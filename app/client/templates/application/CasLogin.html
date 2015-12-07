@@ -4,6 +4,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ currentUser.username }}<b class="caret"></b></a>
       <ul class="dropdown-menu" role="menu">
         <li><a href="{{ pathFor 'ProfilePage' data=currentUser }}">Profile</a></li>
+        {{#if isInRole 'role-manager'}}<li><a href="{{ pathFor 'RoleManager' }}">Role Manager</a></li>{{/if}}
         <li><a href="#" class="btn cas-logout">Logout</a></li>
       </ul>
     </li>

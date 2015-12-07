@@ -1,10 +1,6 @@
 /**
  * Created by Rory on 11/18/2015.
  */
-Meteor.publish('userData', function () {
-  return Meteor.users.find({}, {fields: {profile: 1}});
-});
-
 Meteor.methods({
   changeEmail: function(email) {
     if (Accounts.findUserByEmail(email) === Meteor.user() || !Accounts.findUserByEmail(email)) {
@@ -13,6 +9,18 @@ Meteor.methods({
       })
     }
     Accounts.addEmail(Meteor.userId(), email);
+  },
+  removeRole: function(username, role) {
+    if(Roles.userIsInRole(Meteor.user(), "role-manager")) {
+      var target = Meteor.users.findOne({username:username});
+      Roles.removeUsersFromRoles(target, role);
+    }
+  },
+  addRole: function(username, role) {
+    if(Roles.userIsInRole(Meteor.user(), "role-manager")) {
+      var target = Meteor.users.findOne({username:username});
+      Roles.addUsersToRoles(target, role);
+    }
   }
 });
 
