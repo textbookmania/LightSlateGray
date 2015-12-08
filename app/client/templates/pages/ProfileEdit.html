@@ -1,21 +1,21 @@
 <template name="ProfileEdit">
-  <form class="main form page">
-    <div class="form-group">
-      <label class="control-label" for="profile-image">Profile Image</label>
-      <input type="url" class="form-control" id="profile-image" value="{{ currentUser.profile.profileImage }}" placeholder="Profile image url">
+  {{#IfLoggedIn}}
+  <div class="EditProfileContainer">
+    {{#autoForm
+    collection=users
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
+    id="EditProfileForm"
+    type="update"
+    doc=currentUser}}
+      {{#each afFieldNames name="profile"}}
+        {{> afQuickField name=this.name options=afOptionsFromSchema}}
+      {{/each}}
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    <div class="form-group">
-      <label class="control-label" for="first-name">First Name</label>
-      <input type="text" class="form-control" id="first-name" value="{{ currentUser.profile.firstName }}" placeholder="First name">
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="last-name">Last Name</label>
-      <input type="text" class="form-control" id="last-name" value="{{currentUser.profile.lastName }}" placeholder="Last name">
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="input-email">Email</label>
-      <input type="email" class="form-control" id="input-email" value="{{ currentUser.emails.[0].address }}" placeholder="name@domain.com">
-    </div>
-    <input type="submit" value="Submit" class="btn btn-primary submit"/>
-  </form>
+    {{/autoForm}}
+  </div>
+  {{/IfLoggedIn}}
 </template>
