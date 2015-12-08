@@ -46,11 +46,14 @@ Meteor.publish("userProfile", function(username){
     // property from the fetched document, you might want to
     // set only a nested property of the profile as private
     // instead of the whole property
-
+    var shareOption = false;
+    if (user.profile.shareEmail === true) {
+      shareOption = true;
+    }
     return Meteor.users.find(user._id,{
       fields:{
         "username":1,
-        "emails":1,
+        "emails":shareOption,
         "profile":1
       }
     });
