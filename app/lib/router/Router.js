@@ -74,6 +74,13 @@ Router.route('/edittextbooks/', {
   }
 });
 
+Router.route('/textbookoffers/', {
+  name: 'TextbookOffer',
+  path: '/textbookoffers/:_title',
+  data: function() {
+    return this.params._title;
+  }
+});
 
 Router.route('/addbuyoffer', {
   name: 'AddBuyOffer'

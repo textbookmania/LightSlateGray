@@ -16,14 +16,14 @@
         <div id="ListTextbookInfoRow" class="row">
           <h3>{{title}}</h3>
           <h4>by {{author}}</h4>
-          <BR>&nbsp;<BR>
+          <br>
           <h4>ISBN:</h4>
           <h4>{{isbn13}}</h4>
           <h4>{{isbn10}}</h4>
         </div>
         <div id="ListTextbookInfoButtonRow" class="row">
           <div class="col">
-            <a href="#" class="btn btn-success" role="button">View Offers</a>
+            <a href="{{ pathFor 'TextbookOffer' _title=this.title }}" class="btn btn-success" role="button">View Offers</a>
           </div>
           {{#if isInRole 'admin'}}
           <div class="col">

@@ -1,0 +1,46 @@
+.TextbookOfferContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.TextbookOfferInfo {
+  height: 40vh;
+  width: 100%;;
+  overflow: hidden;
+}
+
+.TextbookOfferInfo .col-sm-4 {
+  max-height: 100%;
+  width: 40%;
+}
+
+.TextbookOfferInfo .col-sm-6 {
+  max-height: 100%;
+  width: 60%;
+}
+
+.TextbookOfferInfo .col-sm-4 a img {
+  height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.TextbookOffers {
+  height: 100%;
+  width: 100%;
+}
+
+.TextbookOffers .table {
+  display: inline-block;
+  float: left;
+}
+
+.TextbookOffers .col-sm-6 {
+  max-height: 100%;
+  width: 50%;
+}
+
+.TextbookOffers h4 {
+  align: center;
+}
