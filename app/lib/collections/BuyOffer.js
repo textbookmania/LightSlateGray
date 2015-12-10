@@ -119,7 +119,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     type: String,
     optional: true,
     autoValue: function() {
-      return Meteor.user().profile.username;
+      return Meteor.user().profile.name;
     },
     autoform: {
       type: "hidden",
