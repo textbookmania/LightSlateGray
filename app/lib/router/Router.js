@@ -46,12 +46,16 @@ Router.route("/profile/:username", {
   }
 });
 
-Router.route('/rolemanager', {
-  name: 'RoleManager'
+Router.route("/users", {
+  name: 'ListUsers',
+
+  waitOn:function(){
+    return Meteor.subscribe("userList");
+  }
 });
 
-Router.route('/students', {
-  name: 'Students'
+Router.route('/rolemanager', {
+  name: 'RoleManager'
 });
 
 Router.route('/textbooks', {
@@ -76,7 +80,11 @@ Router.route('/addbuyoffer', {
 });
 
 Router.route('/listbuyoffer', {
-  name: 'ListBuyOffer'
+  name: 'YourBuyOffer'
+});
+
+Router.route('/allbuyoffer', {
+  name: 'AllBuyOffers'
 });
 
 Router.route('/addselloffer', {
@@ -84,7 +92,11 @@ Router.route('/addselloffer', {
 });
 
 Router.route('/listselloffer', {
-  name: 'ListSellOffer'
+  name: 'YourSellOffer'
+});
+
+Router.route('/allselloffer', {
+  name: 'AllSellOffers'
 });
 
 Router.route('/matching', {

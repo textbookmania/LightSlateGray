@@ -2,23 +2,23 @@
  * Created by Micah on 11/30/2015.
  */
 
-Template.ListSellOffer.helpers({
+Template.YourSellOffer.helpers({
 
   /**
    * @returns {*} All of the Textbook documents.
    */
   sellofferList: function () {
-    return SellOffer.find();
+    return SellOffer.find({student: Meteor.user().profile.name});
   }
 });
 
-Template.ListSellOffer.events({
+Template.YourSellOffer.events({
   'click .delete': function (e) {
     e.preventDefault();
     if (confirm("Delete this sell offer?")) {
       var currentBuyOfferId = this._id;
       Meteor.call("deleteSellOffer", currentBuyOfferId);
-      Router.go('ListSellOffer');
+      Router.go('YourSellOffer');
     }
   }
 });

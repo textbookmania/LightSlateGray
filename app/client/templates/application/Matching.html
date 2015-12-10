@@ -1,0 +1,64 @@
+<template name="Matching">
+  <h1>Matches</h1>
+  {{#IfLoggedIn}}
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#listbuy">List Buy Offer</a></li>
+    <li><a data-toggle="tab" href="#listsell">List Sell Offer</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="listbuy" class="tab-pane fade in active">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Book</th>
+          <th>Offer</th>
+          <th>Expiration</th>
+          <th>Condition</th>
+          <th>Student</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each buyMatch}}
+        <tr>
+          <td>{{book}}</td>
+          <td>{{offer}}</td>
+          <td>{{expiration}}</td>
+          <td>{{condition}}</td>
+          <td>{{student}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div id="listsell" class="tab-pane fade">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Book</th>
+          <th>Offer</th>
+          <th>Expiration</th>
+          <th>Condition</th>
+          <th>Student</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each sellMatch}}
+        <tr>
+          <td>{{book}}</td>
+          <td>{{offer}}</td>
+          <td>{{expiration}}</td>
+          <td>{{condition}}</td>
+          <td>{{student}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {{/IfLoggedIn}}
+</template>
