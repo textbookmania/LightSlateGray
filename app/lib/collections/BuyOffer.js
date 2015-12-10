@@ -118,9 +118,6 @@ BuyOffer.attachSchema(new SimpleSchema({
     label: "student",
     type: String,
     optional: true,
-    autoValue: function() {
-      return Meteor.user().profile.name;
-    },
     autoform: {
       type: "hidden",
       group: buyoffer,
