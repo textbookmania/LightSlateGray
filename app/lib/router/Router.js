@@ -58,10 +58,6 @@ Router.route('/rolemanager', {
   name: 'RoleManager'
 });
 
-Router.route('/students', {
-  name: 'Students'
-});
-
 Router.route('/textbooks', {
   name: 'ListTextbook'
 });
