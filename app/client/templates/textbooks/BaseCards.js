@@ -1,2 +1,0 @@
-Template.BaseCards.helpers({
-});
