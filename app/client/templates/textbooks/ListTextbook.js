@@ -7,3 +7,14 @@ Template.ListTextbook.helpers({
     return Textbook.find();
   },
 });
+
+Template.ListTextbook.events({
+  'click .delete': function (e) {
+    e.preventDefault();
+    if (confirm("Delete Textbook?")) {
+      var currentTextbookId = this._id;
+      Meteor.call("deleteTextbook", currentTextbookId);
+      Router.go('ListTextbook');
+    }
+  }
+});

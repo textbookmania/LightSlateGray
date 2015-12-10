@@ -27,10 +27,13 @@
           </div>
           {{#if isInRole 'admin'}}
           <div class="col">
-            <a href="#" class="btn btn-success" role="button">Delete Textbook</a>
+            <div class="delete">
+              <a href="#" class="btn btn-success" role="button">Delete Textbook</a>
+            </div>
           </div>
           <div class="col">
-            <a href="#" class="btn btn-success" role="button">Edit Textbook</a>
+            <a href="{{ pathFor 'EditTextbook' _isbn=this.isbn13 }}" class="btn btn-success" role="button">Edit
+              Textbook</a>
           </div>
           {{/if}}
 
