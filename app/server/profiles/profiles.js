@@ -59,3 +59,18 @@ Meteor.publish("userProfile", function(username){
     });
   }
 });
+
+Meteor.publish("userList", function(){
+  var userlist = Meteor.users.find({
+    fields: {
+      username: 1,
+      profile: {
+        firstName: 1,
+        lastName: 1,
+        profileImage: 1
+      }
+    }
+  });
+
+  return userlist;
+});

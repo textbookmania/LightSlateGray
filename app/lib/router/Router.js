@@ -46,6 +46,14 @@ Router.route("/profile/:username", {
   }
 });
 
+Router.route("/users", {
+  name: 'ListUsers',
+
+  waitOn:function(){
+    return Meteor.subscribe("userList");
+  }
+});
+
 Router.route('/rolemanager', {
   name: 'RoleManager'
 });

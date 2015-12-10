@@ -2,7 +2,7 @@
   <div class="container-fluid" id="profile-page-content">
     <div class="row">
       <div class="col-md-2 col-md-offset-2" id="profile-left">
-        <img src="{{ profile.profileImage }}" class="img-rounded center-block" height="100" width="100"><br>
+        {{> ProfileImage }}
         <div id="profile-username">
           {{username}}
           {{#if ownProfile}}<a href = "{{ pathFor 'ProfileEdit' }}" class = "btn btn-primary" role = "button">Edit</a>{{/if}}

@@ -1,0 +1,14 @@
+<template name="ListUsers">
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Buy Offers</th>
+      <th>Sell Offers</th>
+    </tr>
+    {{#each getUsers}}
+      {{> UserRow }}
+    {{/each}}
+  </table>
+</template>
