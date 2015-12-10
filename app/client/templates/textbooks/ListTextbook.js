@@ -6,6 +6,9 @@ Template.ListTextbook.helpers({
   textbookList: function () {
     return Textbook.find();
   },
+  textbookCardListRow: function(cards) {
+
+  },
 });
 Template.ListTextbook.events({
   'click .delete': function (e) {
