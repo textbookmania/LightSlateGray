@@ -6,17 +6,4 @@ Template.ListTextbook.helpers({
   textbookList: function () {
     return Textbook.find();
   },
-  textbookCardListRow: function(cards) {
-
-  },
-});
-Template.ListTextbook.events({
-  'click .delete': function (e) {
-    e.preventDefault();
-    if (confirm("Delete Textbook?")) {
-      var currentTextbookId = this._id;
-      Meteor.call("deleteTextbook", currentTextbookId);
-      Router.go('ListTextbook');
-    }
-  }
 });

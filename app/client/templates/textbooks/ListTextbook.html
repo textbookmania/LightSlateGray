@@ -2,10 +2,39 @@
   {{#IfLoggedIn}}
 
   {{#each textbookList}}
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default bootcards-summary">
-        <img class="img-responsive" src={{coverimage}}/>
+  <div id="ListTextbookRow" class="row">
+    <div id="ListTextbookWell" class="well">
+      <div id="ListTextbookCol" class="col">
+        <div class="ListTextbookImage">
+          <a href={{coverimage}} data-lightbox={{title}}>
+            <img src={{coverimage}}/>
+          </a>
+        </div>
+
+      </div>
+      <div id="ListTextbookInfo" class="col">
+        <div id="ListTextbookInfoRow" class="row">
+          <h3>{{title}}</h3>
+          <h4>by {{author}}</h4>
+          <BR>&nbsp;<BR>
+          <h4>ISBN:</h4>
+          <h4>{{isbn13}}</h4>
+          <h4>{{isbn10}}</h4>
+        </div>
+        <div id="ListTextbookInfoButtonRow" class="row">
+          <div class="col">
+            <a href="#" class="btn btn-success" role="button">View Offers</a>
+          </div>
+          {{#if isInRole 'admin'}}
+          <div class="col">
+            <a href="#" class="btn btn-success" role="button">Delete Textbook</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn btn-success" role="button">Edit Textbook</a>
+          </div>
+          {{/if}}
+
+        </div>
       </div>
     </div>
   </div>
