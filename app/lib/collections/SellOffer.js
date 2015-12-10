@@ -117,9 +117,6 @@ SellOffer.attachSchema(new SimpleSchema({
     label: "Student",
     type: String,
     optional: true,
-    autoValue: function() {
-      return Meteor.user().profile.name;
-    },
     autoform: {
       type: "hidden",
       group: selloffer,
