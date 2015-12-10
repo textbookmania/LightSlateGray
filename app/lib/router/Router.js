@@ -80,7 +80,11 @@ Router.route('/addbuyoffer', {
 });
 
 Router.route('/listbuyoffer', {
-  name: 'ListBuyOffer'
+  name: 'YourBuyOffer'
+});
+
+Router.route('/allbuyoffer', {
+  name: 'AllBuyOffers'
 });
 
 Router.route('/addselloffer', {
@@ -88,7 +92,11 @@ Router.route('/addselloffer', {
 });
 
 Router.route('/listselloffer', {
-  name: 'ListSellOffer'
+  name: 'YourSellOffer'
+});
+
+Router.route('/allselloffer', {
+  name: 'AllSellOffers'
 });
 
 Router.route('/matching', {

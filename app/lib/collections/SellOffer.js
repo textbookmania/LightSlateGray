@@ -5,7 +5,7 @@ selloffer = "SellOffer";  // avoid typos, this string occurs many times.
 
 SellOffer = new Mongo.Collection(selloffer);
 
-var expirationPeriod = 1;
+var expirationPeriod = 90;
 
 Meteor.methods({
   /**
@@ -13,7 +13,13 @@ Meteor.methods({
    * @param doc The SellOffer document.
    */
   addSellOffer: function (doc) {
-    //doc.owner = Meteor.user().profile.name;
+    //doc.student = Meteor.user().profile.name;
+    if (_.findWhere(BuyOffer.find().fetch(), {student: doc.student, book: doc.book}) || _.findWhere(SellOffer.find().fetch(), {student: doc.student, book: doc.book}) ) {
+      if (Meteor.isClient) {
+        alert("You already have a sell offer or buy offer for that book.");
+      }
+      return;
+    }
     check(doc, SellOffer.simpleSchema());
     SellOffer.insert(doc);
   },
@@ -105,6 +111,19 @@ SellOffer.attachSchema(new SimpleSchema({
         {label: "Fair", value: "Fair"},
         {label: "Bad", value: "Bad"}
       ]
+    }
+  },
+  student: {
+    label: "Student",
+    type: String,
+    optional: true,
+    autoValue: function() {
+      return Meteor.user().profile.name;
+    },
+    autoform: {
+      type: "hidden",
+      group: selloffer,
+      placeholder: "Student"
     }
   }
 }));

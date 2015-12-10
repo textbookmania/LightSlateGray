@@ -13,7 +13,7 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('ListSellOffer');
+      Router.go('YourSellOffer');
     }
   }
 });
