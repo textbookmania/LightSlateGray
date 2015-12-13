@@ -10,7 +10,8 @@ Template.ListBanned.helpers({
 Template.ListBanned.events({
   'submit .unban-user': function(e) {
     e.preventDefault();
-
-    Meteor.call("unbanUser", this.username);
+    if (confirm("Unban " + this.username + "?")) {
+      Meteor.call("unbanUser", this.username);
+    }
   }
 });
