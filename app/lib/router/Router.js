@@ -24,6 +24,14 @@ Router.configure({
   loadingTemplate: 'Loading'
 });
 
+Router.onBeforeAction(function () {
+  if (Roles.userIsInRole(Meteor.user(), "banned")) {
+    this.render('Banned');
+  } else {
+    this.next();
+  }
+});
+
 Router.route('/', {
   name: 'Home'
 });
