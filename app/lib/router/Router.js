@@ -63,7 +63,11 @@ Router.route("/users", {
 });
 
 Router.route('/admin', {
-  name: "AdminPage"
+  name: "AdminPage",
+
+  waitOn:function() {
+    return Meteor.subscribe("userList");
+  }
 });
 
 Router.route('/rolemanager', {

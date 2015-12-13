@@ -1,0 +1,30 @@
+<template name="ListBanned">
+  <div class="container-fluid">
+    <div class="row">
+      {{#each getBanned }}
+        <div id="user-block">
+          <div class="col-lg-4 col-sm-6 col-xs-12" id="banned-block">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-xs-6" id="user-row-image">
+                  {{> ProfileImage }}
+                  <a href="{{pathFor 'ProfilePage'}}">{{username}}</a>
+                </div>
+                <div class="col-xs-6" id="user-row-name">
+                  <div class="row">
+                    {{ profile.firstName }} {{ profile.lastName }}
+                  </div>
+                  <div class="row">
+                    <form class="unban-user">
+                      <input class="btn btn-danger" type="submit" value="UNBAN">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

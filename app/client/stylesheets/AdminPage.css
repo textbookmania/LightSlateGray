@@ -1,9 +1,7 @@
-.well {
-  background-color: white;
-  border-radius: 1px;
-  border-width: 2px;
+#admin-tabs a {
+  color: #23527c;
 }
 
-a {
-  color: #23527c;
+#ban-user-form {
+  margin: 30px;
 }

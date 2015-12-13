@@ -29,6 +29,12 @@ Meteor.methods({
       Roles.removeUsersFromRoles(target, 'admin');
       Roles.removeUsersFromRoles(target, 'role-manager');
     }
+  },
+  unbanUser: function(username) {
+    if(Roles.userIsInRole(Meteor.user(), "role-manager") || Roles.userIsInRole(Meteor.user(), "admin")) {
+      var target = Meteor.users.findOne({username:username});
+      Roles.removeUsersFromRoles(target, 'banned');
+    }
   }
 });
 
@@ -82,7 +88,8 @@ Meteor.publish("userList", function(){
       "username": 1,
       "profile.firstName": 1,
       "profile.lastName": 1,
-      "profile.profileImage": 1
+      "profile.profileImage": 1,
+      "roles": 1
     }
   });
 });

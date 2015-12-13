@@ -1,10 +1,11 @@
 <template name="BanUser">
-  <form>
+  <form id="ban-user-form" name="ban-user-form" class="ban-user-form">
     <div class="input-group form-group-lg">
       <span class="input-group-btn">
-        <button class="btn btn-lg btn-danger" type="submit">Ban</button>
+        <button class="btn btn-lg btn-danger" type="submit">BAN</button>
       </span>
       <input type="text" class="form-control" id="targetuser" placeholder="Enter user to be banned.">
     </div>
   </form>
+  {{> ListBanned }}
 </template>

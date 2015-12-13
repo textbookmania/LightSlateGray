@@ -2,17 +2,25 @@
   text-align: center;
 }
 
-.panel-body:hover {
+#user-block .panel-body:hover {
   background-color: #eaeaea;
 }
 
-.panel-default {
+#user-block .panel-default {
   border-radius: 0;
   border-color: lightsteelblue;
   border-style: outset;
   border-width: 2px;
 }
 
-.panel {
+#user-block .panel {
   margin-bottom: 30px;
+}
+
+.user-info-text {
+  color: #23527c;
+}
+
+#banned-block .panel-body:hover {
+  background-color: #ffecec;
 }

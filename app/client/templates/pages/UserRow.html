@@ -1,19 +1,21 @@
 <template name="UserRow">
   <a href="{{pathFor 'ProfilePage'}}">
-    <div class="col-lg-4 col-sm-6 col-xs-12">
+    <div class="col-lg-4 col-sm-6 col-xs-12" id="user-block">
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="col-xs-6" id="user-row-image">
             {{> ProfileImage }}
-            <a href="{{pathFor 'ProfilePage'}}">{{username}}</a>
+            <span class="user-info-text">{{username}}</span>
           </div>
           <div class="col-xs-6" id="user-row-name">
             <div class="row">
-              {{ profile.firstName }} {{ profile.lastName }}
+              <span class="user-info-text">{{ profile.firstName }} {{ profile.lastName }}</span>
             </div>
             <div class="row">
-              Buy Offers: {{ countBuyOffers }}<br>
-              Sell Offers: {{ countSellOffers }}
+              <span class="user-info-text">
+                Buy Offers <span class="badge">{{ countBuyOffers }}</span><br>
+                Sell Offers <span class="badge">{{ countSellOffers }}</span>
+              </span>
             </div>
           </div>
         </div>
