@@ -1,0 +1,33 @@
+<template name="AdminPage">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#addtextbook" aria-controls="addtextbook" role="tab" data-toggle="tab">Add Textbook</a></li>
+    <li role="presentation"><a href="#rolemanage" aria-controls="rolemanage" role="tab" data-toggle="tab">Role Manager</a></li>
+    <li role="presentation"><a href="#banuser" aria-controls="banuser" role="tab" data-toggle="tab">Ban User</a></li>
+    <li role="presentation"><a href="#banneduserlist" aria-controls="banneduserlist" role="tab" data-toggle="tab">Banned Users</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="addtextbook">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        {{> AddTextbook }}
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="rolemanage">
+      <div class="panel panel-default">
+        <div class="panel-body">
+         {{> RoleManager}}
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="banuser">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{> BanUser}}
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="banneduserlist">...</div>
+  </div>
+</template>

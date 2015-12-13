@@ -14,9 +14,10 @@
           {{#if profile.shareEmail }}
           <h3>Email: {{ emails.[0].address }}</h3>
           {{/if}}
-          {{#if ownProfile}}<a href = "{{ pathFor 'ProfileEdit' }}" class = "btn btn-primary" role = "button">Edit</a>{{/if}}
+          {{#if userIsBanned}}<h2 style="color: red">This user has been banned.</h2>{{/if}}
         </div>
       </div>
+      {{#if ownProfile}}<a href = "{{ pathFor 'ProfileEdit' }}" class = "btn btn-primary" role = "button">Edit</a>{{/if}}
     </div>
   </div>
 </template>

@@ -62,6 +62,10 @@ Router.route("/users", {
   }
 });
 
+Router.route('/admin', {
+  name: "AdminPage"
+});
+
 Router.route('/rolemanager', {
   name: 'RoleManager'
 });
