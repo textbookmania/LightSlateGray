@@ -15,5 +15,9 @@
 }
 
 .panel-body:hover {
-  background-color: #d5d5d5;
+  background-color: #eaeaea;
+}
+
+.panel-default {
+  border-radius: 0;
 }
