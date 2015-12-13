@@ -1,22 +1,17 @@
 <template name="ListUsers">
   <form role="form" id="searchbar">
     <div class="input-group">
-      <input type="search" class="form-control" placeholder="Search for username..." id="searchname">
+      <input type="search" class="form-control" placeholder="Find a specific user..." id="searchname">
         <span class="input-group-btn">
-          <button class="btn btn-default submit" type="submit" value="Submit">Search</button>
+          <button class="btn btn-default submit" type="submit" value="Submit">Find</button>
         </span>
     </div>
   </form>
-  <table class="table table-striped">
-    <tr>
-      <th></th>
-      <th>Username</th>
-      <th>Name</th>
-      <th>Buy Offers</th>
-      <th>Sell Offers</th>
-    </tr>
-    {{#each getUsers}}
-      {{> UserRow }}
-    {{/each}}
-  </table>
+  <div class="container-fluid">
+    <div class="row">
+      {{#each getUsers}}
+        {{> UserRow }}
+      {{/each}}
+    </div>
+  </div>
 </template>

@@ -1,0 +1,19 @@
+#userrow {
+  padding: 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 0px;
+  height: 100%;
+  background-color: transparent;
+  border-color: steelblue;
+  border-width: 2px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+#user-row-image {
+  text-align: center;
+}
+
+.panel-body:hover {
+  background-color: #d5d5d5;
+}
