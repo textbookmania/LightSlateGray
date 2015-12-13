@@ -6,7 +6,6 @@ Template.ProfilePage.helpers({
     return this._id === Meteor.userId();
   },
   userIsBanned: function() {
-    console.log(this);
     return Roles.userIsInRole(this._id, 'banned');
   }
 });

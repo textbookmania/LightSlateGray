@@ -17,7 +17,18 @@
           {{#if userIsBanned}}<h2 style="color: red">This user has been banned.</h2>{{/if}}
         </div>
       </div>
-      {{#if ownProfile}}<a href = "{{ pathFor 'ProfileEdit' }}" class = "btn btn-primary" role = "button">Edit</a>{{/if}}
+      {{#if ownProfile}}
+        <button class="btn btn-primary" id="profile-edit-button" type="button" data-toggle="collapse" data-target="#profile-edit" aria-expanded="false" aria-controls="profile-edit">
+          Edit
+        </button>
+        <div class="collapse" id="profile-edit">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              {{>ProfileEdit}}
+            </div>
+          </div>
+        </div>
+      {{/if}}
     </div>
   </div>
 </template>
