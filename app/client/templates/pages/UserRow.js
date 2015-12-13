@@ -1,11 +1,11 @@
 /**
  * Created by Rory on 12/13/2015.
  */
-Template.UserRow.helper({
+Template.UserRow.helpers({
   countBuyOffers: function() {
-    return BuyOffer.find(this.username).count();
+    return BuyOffer.find({student:this.username}).count();
   },
   countSellOffers: function() {
-    return SellOffer.find(this.username).count();
+    return SellOffer.find({student:this.username}).count();
   }
 });
