@@ -1,0 +1,38 @@
+#profile-username {
+  text-align: center;
+  font-size: 30px;
+}
+
+#profile-username .btn{
+  margin-left: 20px;
+}
+
+#profile-page-content .well{
+  border-width: 2px;
+  background-color: transparent;
+  border-color: silver;
+  margin: 0 20px 20px 20px;
+  padding: 0;
+  border-radius: 0;
+}
+
+#profile-left {
+  min-width: 200px;
+  background-color: #E7EDF5;
+  height: 100%;
+  padding-top: 10px;
+  display: block;
+}
+
+#profile-left img {
+  margin-bottom: 10px;
+}
+
+#profile-right {
+  padding: 20px;
+}
+
+#profile-right h3{
+  margin-top: 0;
+  margin-bottom: 15px;
+}
