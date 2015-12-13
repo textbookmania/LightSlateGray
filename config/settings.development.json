@@ -28,5 +28,13 @@
     "rorya",
     "micahtas",
     "rs7"
+  ],
+  "seed_test_users": true,
+  "test_users": [
+    "testuserjohn",
+    "testusersally",
+    "testusergary",
+    "testuserbob",
+    "testusermary"
   ]
 }
