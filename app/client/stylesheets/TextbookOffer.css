@@ -31,16 +31,13 @@
   width: 100%;
 }
 
-.TextbookOffers .table {
-  display: inline-block;
-  float: left;
-}
-
-.TextbookOffers .col-sm-6 {
-  max-height: 100%;
-  width: 50%;
-}
 
 .TextbookOffers h4 {
   align: center;
+}
+
+.TextbookOffers .table{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
 }
