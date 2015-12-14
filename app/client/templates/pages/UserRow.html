@@ -3,18 +3,18 @@
     <div class="col-lg-4 col-sm-6 col-xs-12" id="user-block">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="col-sm-6 col-xs-4" id="user-row-image">
+          <div class="col-xs-6" id="user-row-image">
             {{> ProfileImage }}
             <span class="user-info-text">{{username}}</span>
           </div>
-          <div class="col-sm-6 col-xs-8" id="user-row-name">
+          <div class="col-xs-6" id="user-row-name">
             <div class="row">
               <span class="user-info-text">{{ profile.firstName }} {{ profile.lastName }}</span>
             </div>
             <div class="row">
               <span class="user-info-text">
-                Buy Offers <span class="badge">{{ countBuyOffers }}</span><br>
-                Sell Offers <span class="badge">{{ countSellOffers }}</span>
+                Buying <span class="badge">{{ countBuyOffers }}</span><br>
+                Selling <span class="badge">{{ countSellOffers }}</span>
               </span>
             </div>
           </div>
