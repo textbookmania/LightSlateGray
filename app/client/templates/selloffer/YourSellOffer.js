@@ -8,7 +8,7 @@ Template.YourSellOffer.helpers({
    * @returns {*} All of the Textbook documents.
    */
   sellofferList: function () {
-    return SellOffer.find({student: Meteor.user().profile.name});
+    return SellOffer.find({student: Meteor.user().username});
   }
 });
 
