@@ -8,7 +8,7 @@ Template.YourBuyOffer.helpers({
      * @returns {*} All of the Textbook documents.
      */
     buyofferList: function () {
-        return BuyOffer.find({student: Meteor.user().profile.name});
+        return BuyOffer.find({student: Meteor.user().username});
     }
 });
 
