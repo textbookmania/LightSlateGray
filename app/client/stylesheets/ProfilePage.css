@@ -1,6 +1,6 @@
 #profile-username {
   text-align: center;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 #profile-username .btn{
@@ -51,4 +51,18 @@
 
 #profile-edit .panel-default {
   margin-left: 20px;
+}
+
+@media (max-width: 450px) {
+  #profile-page-content .well {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  #profile-page-content .well {
+    max-width: 500px;
+  }
 }
