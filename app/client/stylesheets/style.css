@@ -1,6 +1,6 @@
 body {
   background-color: lightsteelblue;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #304253;
   padding: 0;
 }
@@ -73,6 +73,8 @@ body {
 
 @media (max-width: 991px) {
   .navbar-inverse .navbar-nav > li > a {
-    font-size: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 95%;
   }
 }

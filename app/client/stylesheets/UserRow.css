@@ -29,3 +29,7 @@
 #banned-block .panel-body:hover {
   background-color: #ffecec;
 }
+
+#listuser-header {
+  margin: 5px 0 50px 20px;
+}
