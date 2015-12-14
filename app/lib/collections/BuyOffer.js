@@ -5,7 +5,7 @@ buyoffer = "BuyOffer";  // avoid typos, this string occurs many times.
 
 BuyOffer = new Mongo.Collection(buyoffer);
 
-var expirationPeriod = 90;
+var expirationPeriod = 1;
 
 Meteor.methods({
   /**
@@ -115,7 +115,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     }
   },
   student: {
-    label: "student",
+    label: "Student",
     type: String,
     optional: true,
     autoform: {

@@ -5,7 +5,7 @@ selloffer = "SellOffer";  // avoid typos, this string occurs many times.
 
 SellOffer = new Mongo.Collection(selloffer);
 
-var expirationPeriod = 90;
+var expirationPeriod = 1;
 
 Meteor.methods({
   /**

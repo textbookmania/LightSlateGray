@@ -9,6 +9,15 @@ Template.YourSellOffer.helpers({
    */
   sellofferList: function () {
     return SellOffer.find({student: Meteor.user().username});
+  },
+  formatDate: function (date) {
+    var currDate = new Date();
+    var newDate = moment(date).format('ll, h:mm a');
+    if (date <= currDate) {
+      newDate = newDate.fontcolor("red");
+      return newDate;
+    }
+    return newDate;
   }
 });
 

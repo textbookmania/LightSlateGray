@@ -8,5 +8,8 @@ Template.AllSellOffers.helpers({
    */
   allsellofferList: function () {
     return SellOffer.find();
+  },
+  formatDate: function (date) {
+    return moment(date).format('ll, h:mm a');
   }
 });

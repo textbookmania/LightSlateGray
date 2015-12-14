@@ -1,14 +1,14 @@
 /**
  * Created by Micah on 12/6/2015.
  */
-/*
-Template.Matching.helpers({
+
+/*Template.Matching.helpers({
   sellMatch: function() {
-  var sellOffer = SellOffer.find({student: Meteor.user().profile.name}).fetch();
-   var sellMatches = [];
-   var buyOfferMatches = [];
+  var sellOffer = SellOffer.find({student: Meteor.user().username}).fetch();
+  var sellMatches = [];
+  var buyOfferMatches = [];
    _.each(sellOffer, function(rec){
-    buyOfferMatches = buyOfferMatches.concat(BuyOffer.find({book: rec.book}));
+    buyOfferMatches = buyOfferMatches.concat(BuyOffer.find({isbn10: rec.isbn10}));
    });
    _.each(buyOfferMatches, function(rec){
     rec.forEach(function(offers){
@@ -18,14 +18,14 @@ Template.Matching.helpers({
     });
    });
   return sellMatches;
- },
+  },
 
  buyMatch: function(){
-  var buyOffer = BuyOffer.find({student: Meteor.user().profile.name}).fetch();
+  var buyOffer = BuyOffer.find({student: Meteor.user().username}).fetch();
   var buyMatches = [];
   var sellOfferMatches = [];
   _.each(buyOffer, function(rec){
-    sellOfferMatches = sellOfferMatches.concat(SellOffer.find({book: rec.book}));
+    sellOfferMatches = sellOfferMatches.concat(SellOffer.find({isbn10: rec.isbn10}));
   });
   _.each(sellOfferMatches, function(rec){
     rec.forEach(function(offers){
@@ -39,23 +39,24 @@ Template.Matching.helpers({
  });*/
 
 
+
 Template.Matching.helpers({
   sellMatch: function() {
-    var sellOffer = SellOffer.find({student: Meteor.user().profile.name}).fetch();
+    var sellOffer = SellOffer.find({student: Meteor.user().username}).fetch();
     var sellMatches = [];
     //var buyOfferMatches = [];
     _.each(sellOffer, function(rec){
-      sellMatches = sellMatches.concat(BuyOffer.find({book: rec.book}));
+      sellMatches = sellMatches.concat(BuyOffer.find({isbn10: rec.isbn10}));
     });
     return sellMatches;
   },
 
   buyMatch: function(){
-    var buyOffer = BuyOffer.find({student: Meteor.user().profile.name}).fetch();
+    var buyOffer = BuyOffer.find({student: Meteor.user().username}).fetch();
     var buyMatches = [];
     //var sellOfferMatches = [];
     _.each(buyOffer, function(rec){
-      buyMatches = buyMatches.concat(SellOffer.find({book: rec.book}));
+      buyMatches = buyMatches.concat(SellOffer.find({isbn10: rec.isbn10}));
     });
     return buyMatches;
   }

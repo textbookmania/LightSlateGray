@@ -8,7 +8,7 @@
 
   <div class="tab-content">
     <div id="listbuy" class="tab-pane fade in active">
-      <table class="table table-striped table-bordered">
+      <table class="table table-striped table-bordered" style="text-align: center">
         <thead>
         <tr>
           <th>Book</th>
@@ -16,6 +16,7 @@
           <th>Expiration</th>
           <th>Condition</th>
           <th>Student</th>
+          <th>Accept Offer</th>
         </tr>
         </thead>
 
@@ -27,6 +28,7 @@
           <td>{{expiration}}</td>
           <td>{{condition}}</td>
           <td>{{student}}</td>
+          <td><a class="accept" href="#">Accept</a></td>
         </tr>
         {{/each}}
         </tbody>
@@ -34,7 +36,7 @@
     </div>
 
     <div id="listsell" class="tab-pane fade">
-      <table class="table table-striped table-bordered">
+      <table class="table table-striped table-bordered" style="text-align: center">
         <thead>
         <tr>
           <th>Book</th>
@@ -42,6 +44,7 @@
           <th>Expiration</th>
           <th>Condition</th>
           <th>Student</th>
+          <th>Accept Offer</th>
         </tr>
         </thead>
 
@@ -53,6 +56,7 @@
           <td>{{expiration}}</td>
           <td>{{condition}}</td>
           <td>{{student}}</td>
+          <td><a class="accept" href="#">Accept</a></td>
         </tr>
         {{/each}}
         </tbody>
