@@ -1,5 +1,8 @@
 #user-row-image {
   text-align: center;
+  border-width: 0 1px 0 0;
+  border-color: silver;
+  border-style: solid;
 }
 
 #user-block .panel-body:hover {
@@ -11,6 +14,7 @@
   border-color: lightsteelblue;
   border-style: outset;
   border-width: 2px;
+  background-color: #F7F9FB;
 }
 
 #user-block .panel {

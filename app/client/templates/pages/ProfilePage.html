@@ -3,13 +3,13 @@
     <h4>Profile:</h4>
     <div class="row">
       <div class="well container-fluid">
-        <div class="col-md-2" align="right" id="profile-left">
+        <div class="col-sm-2" align="right" id="profile-left">
           {{> ProfileImage }}
           <div id="profile-username">
             {{username}}
           </div>
         </div>
-        <div class="col-md-6" id="profile-right">
+        <div class="col-sm-6" id="profile-right">
           <h3>{{ profile.firstName }} {{ profile.lastName }}</h3>
           {{#if profile.shareEmail }}
           <h3>Email: {{ emails.[0].address }}</h3>
