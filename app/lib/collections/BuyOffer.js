@@ -13,7 +13,7 @@ Meteor.methods({
    * @param doc The BuyOffer document.
    */
   addBuyOffer: function (doc) {
-    //doc.student = Meteor.user().profile.username;
+    doc.student = Meteor.user().username;
     if (_.findWhere(BuyOffer.find().fetch(), {student: doc.student, book: doc.book}) || _.findWhere(SellOffer.find().fetch(), {student: doc.student, book: doc.book}) ) {
       if (Meteor.isClient) {
         alert("You already have a sell offer or buy offer for that book.");
