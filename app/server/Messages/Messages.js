@@ -17,6 +17,9 @@ Meteor.publish("UnreadMessages", function () {
 
 Meteor.methods({
   sendBuyOfferMessage: function (offer) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     var student = Meteor.user().username;
 
     var message = {
@@ -45,6 +48,9 @@ Meteor.methods({
     }
   },
   sendSellOfferMessage: function (offer) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     var student = Meteor.user().username;
 
     var message = {
@@ -73,6 +79,9 @@ Meteor.methods({
     }
   },
   confirmBuyOfferMessage: function (messageinfo) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     var student = Meteor.user().username;
 
     var message = {
@@ -101,6 +110,9 @@ Meteor.methods({
     }
   },
   confirmSellOfferMessage: function(messageinfo) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     var student = Meteor.user().username;
 
     var message = {

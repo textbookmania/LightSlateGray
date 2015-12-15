@@ -3,26 +3,40 @@
  */
 Meteor.methods({
   changeEmail: function(email) {
-    if (Accounts.findUserByEmail(email) === Meteor.user() || !Accounts.findUserByEmail(email)) {
-      _.each(Meteor.user().emails, function(targetaddress){
-          Accounts.removeEmail(Meteor.userId(), targetaddress.address)
-      })
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
     }
-    Accounts.addEmail(Meteor.userId(), email);
+    if(Roles.userIsInRole(Meteor.user(), 'admin')) {
+      if (Accounts.findUserByEmail(email) === Meteor.user() || !Accounts.findUserByEmail(email)) {
+        _.each(Meteor.user().emails, function (targetaddress) {
+          Accounts.removeEmail(Meteor.userId(), targetaddress.address)
+        });
+      }
+      Accounts.addEmail(Meteor.userId(), email);
+    }
   },
   removeRole: function(username, role) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     if(Roles.userIsInRole(Meteor.user(), "role-manager")) {
       var target = Meteor.users.findOne({username:username});
       Roles.removeUsersFromRoles(target, role);
     }
   },
   addRole: function(username, role) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     if(Roles.userIsInRole(Meteor.user(), "role-manager")) {
       var target = Meteor.users.findOne({username:username});
       Roles.addUsersToRoles(target, role);
     }
   },
   banUser: function(username) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     if(Roles.userIsInRole(Meteor.user(), "role-manager") || Roles.userIsInRole(Meteor.user(), "admin")) {
       var target = Meteor.users.findOne({username:username});
       Roles.addUsersToRoles(target, 'banned');
@@ -31,6 +45,9 @@ Meteor.methods({
     }
   },
   unbanUser: function(username) {
+    if(Roles.userIsInRole(Meteor.user(), 'banned')) {
+      throw new Meteor.Error("User is banned.");
+    }
     if(Roles.userIsInRole(Meteor.user(), "role-manager") || Roles.userIsInRole(Meteor.user(), "admin")) {
       var target = Meteor.users.findOne({username:username});
       Roles.removeUsersFromRoles(target, 'banned');

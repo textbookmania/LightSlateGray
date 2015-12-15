@@ -1,4 +1,5 @@
 <template name="AdminPage">
+  {{#IfLoggedIn}}
   <ul class="nav nav-tabs" role="tablist" id="admin-tabs">
     <li role="presentation" class="active"><a href="#addtextbook" aria-controls="addtextbook" role="tab" data-toggle="tab">Add Textbook</a></li>
     <li role="presentation"><a href="#rolemanage" aria-controls="rolemanage" role="tab" data-toggle="tab">Role Manager</a></li>
@@ -28,4 +29,5 @@
       </div>
     </div>
   </div>
+  {{/IfLoggedIn}}
 </template>
