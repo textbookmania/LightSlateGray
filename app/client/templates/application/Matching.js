@@ -42,22 +42,17 @@
 
 Template.Matching.helpers({
   sellMatch: function() {
-    var sellOffer = SellOffer.find({student: Meteor.user().username}).fetch();
-    var sellMatches = [];
-    //var buyOfferMatches = [];
-    _.each(sellOffer, function(rec){
-      sellMatches = sellMatches.concat(BuyOffer.find({isbn10: rec.isbn10}));
-    });
-    return sellMatches;
+    var sellOffers = SellOffer.find({student: Meteor.user().username}).fetch();
+    var sellList = _.pluck(sellOffers, 'book');
+    return BuyOffer.find({book: {$in: sellList}});
   },
 
   buyMatch: function(){
-    var buyOffer = BuyOffer.find({student: Meteor.user().username}).fetch();
-    var buyMatches = [];
-    //var sellOfferMatches = [];
-    _.each(buyOffer, function(rec){
-      buyMatches = buyMatches.concat(SellOffer.find({isbn10: rec.isbn10}));
-    });
-    return buyMatches;
+    var buyOffers = BuyOffer.find({student: Meteor.user().username}).fetch();
+    var buyList = _.pluck(buyOffers, 'book');
+    return SellOffer.find({book: {$in: buyList}});
+  },
+  formatDate: function (date) {
+    return moment(date).format('ll, h:mm a');
   }
 });

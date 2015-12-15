@@ -30,6 +30,12 @@ Meteor.methods({
    * @param docID It's ID.
    */
   editBuyOffer: function (doc, docID) {
+    if (_.findWhere(BuyOffer.find().fetch(), {student: doc.student, book: doc.book}) || _.findWhere(SellOffer.find().fetch(), {student: doc.student, book: doc.book}) ) {
+      if (Meteor.isClient) {
+        alert("You already have a sell offer or buy offer for that book.");
+      }
+      return;
+    }
     check(doc, BuyOffer.simpleSchema());
     BuyOffer.update({_id: docID}, doc);
   },
