@@ -102,12 +102,12 @@ Router.route('/textbookoffers/', {
   }
 });
 
-Router.route('/addbuyoffer', {
-  name: 'AddBuyOffer'
+Router.route('offers', {
+  name: 'Offers'
 });
 
-Router.route('/listbuyoffer', {
-  name: 'YourBuyOffer'
+Router.route('/addbuyoffer', {
+  name: 'AddBuyOffer'
 });
 
 Router.route('/allbuyoffer', {
@@ -116,10 +116,6 @@ Router.route('/allbuyoffer', {
 
 Router.route('/addselloffer', {
   name: 'AddSellOffer'
-});
-
-Router.route('/listselloffer', {
-  name: 'YourSellOffer'
 });
 
 Router.route('/allselloffer', {

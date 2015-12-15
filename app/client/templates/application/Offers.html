@@ -1,0 +1,21 @@
+<template name="Offers">
+  {{#IfLoggedIn}}
+  <a class="btn btn-default" href="{{pathFor 'AddBuyOffer'}}">Add Buy</a>
+  <a class="btn btn-default" href="{{pathFor 'AddSellOffer'}}">Add Sell</a>
+
+  <ul class="nav nav-tabs" style="margin-top: 10px">
+    <li class="active"><a data-toggle="tab" href="#buyoffers">List All Buy Offers</a></li>
+    <li><a data-toggle="tab" href="#selloffers">List All Sell Offers</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="buyoffers" class="tab-pane fade in active">
+      {{> AllBuyOffers}}
+    </div>
+
+    <div id="selloffers" class="tab-pane fade">
+      {{> AllSellOffers}}
+    </div>
+  </div>
+  {{/IfLoggedIn}}
+</template>

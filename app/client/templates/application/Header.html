@@ -21,21 +21,10 @@
 
           <li><a href="{{ pathFor 'ListTextbook' }}">Textbooks</a></li>
 
-          <li><a href="" data-toggle="dropdown" class="dropdown-toggle">Buy Offers<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ pathFor 'AddBuyOffer' }}">Add Buy Offer</a></li>
-              <li><a href="{{ pathFor 'YourBuyOffer' }}">List Your Buy Offers</a></li>
-              <li><a href="{{ pathFor 'AllBuyOffers' }}">List All Buy Offers</a></li>
-            </ul>
-          </li>
-          <li><a href="" data-toggle="dropdown" class="dropdown-toggle">Sell Offers<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ pathFor 'AddSellOffer' }}">Add Sell Offer</a></li>
-              <li><a href="{{ pathFor 'YourSellOffer' }}">List Your Sell Offers</a></li>
-              <li><a href="{{ pathFor 'AllSellOffers' }}">List All Sell Offers</a></li>
-            </ul>
-          </li>
+              <li><a href="{{ pathFor 'Offers' }}">Offers</a></li>
+
           <li><a href="{{ pathFor 'Matching'}}">Matching</a></li>
+
           <li><a href="{{ pathFor 'Help' }}">Help</a></li>
           {{/IfLoggedIn}}
         </ul>

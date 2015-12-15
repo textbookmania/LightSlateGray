@@ -1,15 +1,10 @@
 <template name="AddBuyOffer">
   {{#IfLoggedIn}}
-    {{> quickForm
-    collection="BuyOffer"
-    template="bootstrap3-horizontal"
-    label-class="col-sm-2"
-    input-col-class="col-sm-10"
-
-    id="AddBuyOfferForm"
-    type="method"
-    meteormethod="addBuyOffer"
-    resetOnSuccess=true}}
+  <h1>Add a New Buy Offer</h1>
+    {{#autoForm collection="BuyOffer" id="AddBuyOfferForm" type="method" meteormethod="addBuyOffer"}}
+      {{> afQuickFields book="book" offer="offer" condition="condition"}}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    {{/autoForm}}
   {{/IfLoggedIn}}
 </template>
 
