@@ -16,6 +16,13 @@ body {
   color: #122b40;
   margin-left: 4px;
 }
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+  color: whitesmoke;
+}
+
+.navbar-nav li:hover {
+  background-color: #428bca;
+}
 
 .header-image {
   background-image: url('images/cover-image.jpg');
