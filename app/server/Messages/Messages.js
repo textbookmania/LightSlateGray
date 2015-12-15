@@ -8,6 +8,13 @@ Meteor.publish("Messages", function () {
   }
 });
 
+Meteor.publish("UnreadMessages", function () {
+  if (this.userId) {
+    var user = Meteor.users.find({_id: this.userId}).fetch();
+    return Messages.find({owner:user[0].username, viewed:false});
+  }
+});
+
 Meteor.methods({
   sendBuyOfferMessage: function (offer) {
     var student = Meteor.user().username;

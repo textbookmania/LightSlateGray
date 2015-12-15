@@ -10,6 +10,13 @@ body {
   background-color: white;
 }
 
+#unread-badge {
+  border-radius: 6px;
+  background-color: whitesmoke;
+  color: #122b40;
+  margin-left: 4px;
+}
+
 .header-image {
   background-image: url('images/cover-image.jpg');
   background-size: cover;

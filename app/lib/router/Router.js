@@ -14,14 +14,12 @@ Router.configure({
 
 Router.configure({
   layoutTemplate: 'Layout',
-  waitOn: function() { return Meteor.subscribe("SellOffer"); },
+  waitOn: function() { return Meteor.subscribe("BuyOffer"); },
   loadingTemplate: 'Loading'
 });
 
 Router.configure({
-  layoutTemplate: 'Layout',
-  waitOn: function() { return Meteor.subscribe("BuyOffer"); },
-  loadingTemplate: 'Loading'
+  waitOn: function() { return Meteor.subscribe("UnreadMessages"); }
 });
 
 Router.onBeforeAction(function () {
@@ -124,7 +122,7 @@ Router.route('/allselloffer', {
 
 Router.route('/matching', {
   name: 'Matching',
-  
+
   waitOn:function() {
     return Meteor.subscribe("Messages")
   }
