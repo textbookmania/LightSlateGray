@@ -8,7 +8,12 @@ Meteor.methods({
    * @param doc The Textbook document.
    */
   addTextbook: function (doc) {
+    if (_.contains(Meteor.user().roles, "admin") === false) {
+      throw new Meteor.Error(403, "Permission Denied");
+    }
     check(doc, Textbook.simpleSchema());
+    var image = "http://images.amazon.com/images/P/0" + doc.isbn10 + ".01.LZ.jpg"
+    doc.coverimage = image;
     Textbook.insert(doc);
   },
   /**
@@ -18,9 +23,16 @@ Meteor.methods({
    * @param docID It's ID.
    */
   editTextbook: function (doc, docID) {
+    if (_.contains(Meteor.user().roles, "admin") === false) {
+      throw new Meteor.Error(403, "Permission Denied");
+    }
     check(doc, Textbook.simpleSchema());
+    var image = "http://images.amazon.com/images/P/0" + doc.$set.isbn10 + ".01.LZ.jpg"
+
+    doc.$set.coverimage = image;
+
     Textbook.update({_id: docID}, doc);
-  }
+  },
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
@@ -67,7 +79,7 @@ Textbook.attachSchema(new SimpleSchema({
   isbn10: {
     label: "ISBN10",
     type: String,
-    optional: true,
+    optional: false,
     autoform: {
       group: textbook,
       placeholder: "ISBN10 of Book"
@@ -103,8 +115,9 @@ Textbook.attachSchema(new SimpleSchema({
   coverimage: {
     label: "Cover Image",
     type: String,
-    optional: true,
+    optional: false,
     autoform: {
+      type: "hidden",
       group: textbook,
       placeholder: "Cover Image of Book"
     }

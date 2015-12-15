@@ -9,7 +9,7 @@ AutoForm.hooks({
      * @param formType The form.
      * @param result The result of form submission.
      */
-      submit: function(formType, result) {
+    onSuccess: function(formType, result) {
       Router.go('ListTextbook');
     }
   }
