@@ -2,6 +2,7 @@
   {{#IfLoggedIn}}
 
   <h2>Find textbooks:</h2>
+
   <form role="form" id="searchbar">
     <div class="input-group">
       <input type="search" class="form-control" placeholder="Find by title..." id="searchname">
@@ -23,13 +24,16 @@
       </div>
       <a href="{{ pathFor 'TextbookOffer' _title=this.title }}">
         <div id="ListTextbookInfo" class="col">
-          <div id="ListTextbookInfoRow" class="row">
+          <div id="ListTextbookInfoTitleRow" class="row">
             <h3>{{title}}</h3>
             <h4>by {{author}}</h4>
             <br>
-            <h4>ISBN:</h4>
-            <h4>{{isbn13}}</h4>
-            <h4>{{isbn10}}</h4>
+
+            <div id="ListTextbookInfoISBN">
+              <h4>ISBN:</h4>
+              <h4>{{isbn13}}</h4>
+              <h4>{{isbn10}}</h4>
+            </div>
           </div>
         </div>
       </a>

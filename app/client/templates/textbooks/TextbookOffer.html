@@ -4,12 +4,12 @@
   {{#with getTextbook}}
   <div class="TextbookOfferContainer">
     <div class="TextbookOfferInfo">
-      <div class="col-sm-4">
+      <div id="TextbookOfferInfoImage" class="col">
         <a href={{coverimage}} data-lightbox={{title}}>
           <img src={{coverimage}}/>
         </a>
       </div>
-      <div class="col-sm-6">
+      <div id="TextbookOfferInfoText" class="col">
         <h3>{{title}}</h3>
         <h4>by {{author}}</h4>
         <br>
@@ -20,19 +20,19 @@
         <h4>{{isbn10}}</h4>
         <br>
         {{#if isInRole 'admin'}}
-        <div class="col-xs-6">
+        <div id="adminButtons" class="col">
           <div class="delete">
             <a href="#" class="btn btn-success" role="button">Delete Textbook</a>
           </div>
         </div>
-        <div class="col-xs-6">
+        <div id="adminButtons" class="col">
           <a href="{{ pathFor 'EditTextbook' _isbn=this.isbn13 }}" class="btn btn-success" role="button">Edit
             Textbook</a>
         </div>
         {{/if}}
       </div>
     </div>
-    <div class="TextbookOffers">
+    <div id="TextbookOffers" class="row">
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#buyOffers">List Buy Offers</a></li>
         <li><a data-toggle="tab" href="#sellOffers">List Sell Offers</a></li>

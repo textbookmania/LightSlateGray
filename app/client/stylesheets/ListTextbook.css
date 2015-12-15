@@ -102,7 +102,7 @@
   margin: 0 auto;
 }
 
-#ListTextbookRow.row:hover {
+#ListTextbookInfoTitleRow.row:hover {
   background-color: #ddd;
 }
 
@@ -125,4 +125,28 @@ img.img-responsive {
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
+}
+
+@media screen and (max-height: 860px) {
+  #ListTextbookInfoISBN {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #ListTextbookInfoISBN {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #ListTextbookInfoTitleRow h4{
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  #ListTextbookInfoTitleRow h3 {
+    font-size: 1em;
+  }
 }

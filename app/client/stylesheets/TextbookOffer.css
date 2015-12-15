@@ -9,24 +9,30 @@
   overflow: hidden;
 }
 
-.TextbookOfferInfo .col-sm-4 {
+#TextbookOfferInfoImage.col {
   max-height: 100%;
   width: 40%;
+  margin: 0;
+  dusplay: block;
+  float: left;
 }
 
-.TextbookOfferInfo .col-sm-6 {
+#TextbookOfferInfoText.col {
   max-height: 100%;
   width: 60%;
+  margin: 0;
+  display: block;
+  float: left;
 }
 
-.TextbookOfferInfo .col-sm-4 a img {
+#TextbookOfferInfoImage a img {
   height: 100%;
   max-width: 100%;
   display: block;
-  margin: auto;
+  margin: 0;
 }
 
-.TextbookOffers {
+#TextbookOffers.row {
   height: 100%;
   width: 100%;
 }
@@ -42,3 +48,46 @@
   margin-bottom: 20px;
 }
 
+#adminButtons {
+  max-height: 100%;
+  width: 30%;
+  margin: auto;
+  display: block;
+  float: left;
+}
+
+@media screen and (max-width: 500px) {
+  #TextbookOfferInfoText h4 {
+    visibility: hidden;
+  }
+  #adminButtons {
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: left;
+  }
+}
+
+@media screen and (max-height: 930px) {
+  .TextbookOfferInfo {
+    height: 100vh;
+    overflow: hidden;
+  }
+  #TextbookOfferInfoText h4 {
+    visibility: hidden;
+  }
+  #adminButtons {
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: left;
+  }
+  #TextbookOfferInfoText.col {
+    max-height: 100%;
+    margin: 0;
+    display: block;
+    float: left;
+  }
+}
