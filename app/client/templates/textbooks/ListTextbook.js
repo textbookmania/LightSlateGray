@@ -4,7 +4,6 @@ Template.ListTextbook.helpers({
    * @returns {*} All of the Textbook documents.
    */
   textbookList: function () {
-    console.log(Router.current().params.query.textbook);
     if (Router.current().params.query.textbook) {
       var title = Router.current().params.query.textbook;
       return Textbook.find({title: title});
@@ -12,7 +11,7 @@ Template.ListTextbook.helpers({
     else {
       return Textbook.find();
     }
-  },
+  }
 });
 
 Template.ListTextbook.events({

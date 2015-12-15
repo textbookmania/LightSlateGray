@@ -100,7 +100,7 @@ Router.route('/textbookoffers/', {
   }
 });
 
-Router.route('offers', {
+Router.route('/offers', {
   name: 'Offers'
 });
 
