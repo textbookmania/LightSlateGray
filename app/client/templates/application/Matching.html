@@ -28,7 +28,7 @@
           <td>{{formatDate expiration}}</td>
           <td>{{condition}}</td>
           <td>{{student}}</td>
-          <td><a class="accept" href="#">Accept</a></td>
+          <td>{{> SellOfferMessageButton}}</td>
         </tr>
         {{/each}}
         </tbody>
@@ -56,7 +56,7 @@
           <td>{{formatDate expiration}}</td>
           <td>{{condition}}</td>
           <td>{{student}}</td>
-          <td><a class="accept" href="#">Accept</a></td>
+          <td>{{> BuyOfferMessageButton}}</td>
         </tr>
         {{/each}}
         </tbody>

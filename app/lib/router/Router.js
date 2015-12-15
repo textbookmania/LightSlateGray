@@ -123,7 +123,11 @@ Router.route('/allselloffer', {
 });
 
 Router.route('/matching', {
-  name: 'Matching'
+  name: 'Matching',
+  
+  waitOn:function() {
+    return Meteor.subscribe("Messages")
+  }
 });
 
 Router.route('/help', {
