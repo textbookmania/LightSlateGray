@@ -71,12 +71,10 @@
 
 @media screen and (max-height: 930px) {
   .TextbookOfferInfo {
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
   }
-  #TextbookOfferInfoText h4 {
-    visibility: hidden;
-  }
+
   #adminButtons {
     max-height: 100%;
     width: 100%;
