@@ -1,5 +1,6 @@
 <template name="AddTextbook">
   {{#IfLoggedIn}}
+  {{#if isInRole 'admin'}}
     <div class="AddTextbookContainer">
       {{> quickForm
       collection="Textbook"
@@ -12,5 +13,6 @@
       meteormethod="addTextbook"
       resetOnSuccess=true}}
     </div>
+  {{/if}}
   {{/IfLoggedIn}}
 </template>

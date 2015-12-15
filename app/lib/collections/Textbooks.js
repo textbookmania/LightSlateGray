@@ -8,13 +8,21 @@ Meteor.methods({
    * @param doc The Textbook document.
    */
   addTextbook: function (doc) {
-    if (_.contains(Meteor.user().roles, "admin") === false) {
+
+    if (Roles.userIsInRole(Meteor.user(), "admin") === false) {
       throw new Meteor.Error(403, "Permission Denied");
     }
     check(doc, Textbook.simpleSchema());
-    var image = "http://images.amazon.com/images/P/0" + doc.isbn10 + ".01.LZ.jpg"
+
+    var image = "http://images.amazon.com/images/P/" + doc.isbn10 + ".01.LZ.jpg";
     doc.coverimage = image;
-    Textbook.insert(doc);
+    if (Meteor.call("checkTextbook", doc) === false) {
+      throw new Meteor.Error("Invalid Add");
+    }
+    else {
+      Textbook.insert(doc);
+    }
+
   },
   /**
    *
@@ -26,12 +34,61 @@ Meteor.methods({
     if (_.contains(Meteor.user().roles, "admin") === false) {
       throw new Meteor.Error(403, "Permission Denied");
     }
-    check(doc, Textbook.simpleSchema());
-    var image = "http://images.amazon.com/images/P/0" + doc.$set.isbn10 + ".01.LZ.jpg"
+
+    console.log("doc");
+    console.log(doc);
+    console.log("docID");
+    console.log(docID);
+
+    var image = "http://images.amazon.com/images/P/" + doc.$set.isbn10 + ".01.LZ.jpg";
 
     doc.$set.coverimage = image;
+    if (Meteor.call("checkTextbook", doc) === false) {
+      throw new Meteor.Error("Invalid Edit");
+    }
+    else {
+      Textbook.update({_id: docID}, doc);
+    }
 
-    Textbook.update({_id: docID}, doc);
+  },
+  /**
+   * This checks that the Textbook is valid to add or edit.
+   * @param doc The Textbook documents.
+   * @return valid The check.
+   */
+  checkTextbook: function (doc) {
+    if (_.contains(Meteor.user().roles, "admin") === false) {
+      throw new Meteor.Error(403, "Permission Denied");
+    }
+
+    var valid = true;
+    if (_.findWhere(Textbook.find().fetch(), {title: doc.title})) {
+      if (Meteor.isClient) {
+        alert("Book Title exists");
+      }
+      valid = false;
+    }
+
+    if (_.findWhere(Textbook.find().fetch(), {isbn13: doc.isbn13})) {
+      if (Meteor.isClient) {
+        alert("Book ISBN13 exists");
+      }
+      valid = false;
+
+    }
+
+    if (_.findWhere(Textbook.find().fetch(), {isbn10: doc.isbn10})) {
+      if (Meteor.isClient) {
+        alert("Book ISBN10 exists");
+      }
+      valid = false;
+
+    }
+
+    return valid;
+  },
+  deleteTextbook: function (docID) {
+    Textbook.remove(docID);
   },
 });
 
@@ -82,7 +139,7 @@ Textbook.attachSchema(new SimpleSchema({
     optional: false,
     autoform: {
       group: textbook,
-      placeholder: "ISBN10 of Book"
+      placeholder: "ISBN10 of Book ex. XXXXXXXXXX"
     }
   },
   isbn13: {
@@ -91,7 +148,7 @@ Textbook.attachSchema(new SimpleSchema({
     optional: false,
     autoform: {
       group: textbook,
-      placeholder: "ISBN13 of Book"
+      placeholder: "ISBN13 of Book ex. XXXXXXXXXXXXX"
     }
   },
   edition: {
@@ -115,9 +172,8 @@ Textbook.attachSchema(new SimpleSchema({
   coverimage: {
     label: "Cover Image",
     type: String,
-    optional: false,
+    optional: true,
     autoform: {
-      type: "hidden",
       group: textbook,
       placeholder: "Cover Image of Book"
     }
