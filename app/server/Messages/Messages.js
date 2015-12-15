@@ -127,5 +127,15 @@ Meteor.methods({
     else {
       Messages.insert(message);
     }
+  },
+  markViewed: function() {
+    var username = Meteor.user().username;
+
+    Messages.find({owner: username, viewed: false})
+      .forEach(function(message){
+        Messages.update({_id: message._id},
+          {$set: { viewed: true }}
+        );
+      });
   }
 });

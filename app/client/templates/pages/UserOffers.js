@@ -6,3 +6,9 @@ Template.UserOffers.helpers({
     return this._id === Meteor.userId();
   }
 });
+
+Template.UserOffers.events({
+  'click #messages-click': function() {
+    Meteor.call("markViewed");
+  }
+});
