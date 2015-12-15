@@ -25,8 +25,7 @@ Template.UserSellOffers.helpers({
     var currDate = new Date();
     var newDate = moment(date).format('ll, h:mm a');
     if (date <= currDate) {
-      newDate = newDate.fontcolor("red");
-      return newDate;
+      return "EXPIRED" + newDate;
     }
     return newDate;
   }
