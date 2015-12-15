@@ -4,7 +4,14 @@ Template.ListTextbook.helpers({
    * @returns {*} All of the Textbook documents.
    */
   textbookList: function () {
-    return Textbook.find();
+    console.log(Router.current().params.query.textbook);
+    if (Router.current().params.query.textbook) {
+      var title = Router.current().params.query.textbook;
+      return Textbook.find({title: title});
+    }
+    else {
+      return Textbook.find();
+    }
   },
 });
 
@@ -19,5 +26,12 @@ Template.ListTextbook.events({
       Meteor.call("deleteTextbook", currentTextbookId);
       Router.go('ListTextbook');
     }
+  },
+  'submit form': function(e) {
+    e.preventDefault();
+
+    var title = $(e.target).find('[id=searchname]').val();
+    var q = "textbook=".concat(title);
+    Router.go("ListTextbook", {}, {query: q});
   }
 });

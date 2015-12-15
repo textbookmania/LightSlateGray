@@ -1,6 +1,15 @@
 <template name="ListTextbook">
   {{#IfLoggedIn}}
 
+  <h2>Find textbooks:</h2>
+  <form role="form" id="searchbar">
+    <div class="input-group">
+      <input type="search" class="form-control" placeholder="Find by title..." id="searchname">
+        <span class="input-group-btn">
+          <button class="btn btn-default submit" type="submit" value="Submit">Find</button>
+        </span>
+    </div>
+  </form>
   {{#each textbookList}}
   <div id="ListTextbookRow" class="row">
     <div id="ListTextbookWell" class="well">
