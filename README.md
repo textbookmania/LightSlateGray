@@ -42,7 +42,10 @@ Please refer to our [User's Guide](https://github.com/textbookmania/LightSteelBl
 Or for developers, please refer to our [Developer's Guide](https://github.com/textbookmania/LightSteelBlue/wiki/Developer's-Guide).
 Otherwise, refer to our [Contact Us](https://github.com/textbookmania/LightSteelBlue/wiki/Contact-Us) section.
 
-#Credits  
+#Credits
+Want to give credit to Team Sky Blue for expiration date implementation and Team Royal Blue for no duplicate posts
+implementation.
+
 ##Meteor
 LightSteelBlue is based on [meteor-example-uh-cas template](http://ics-software-engineering.github.io/meteor-example-uh-cas/).  
 
