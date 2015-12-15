@@ -4,6 +4,10 @@
 Template.UserOffers.helpers({
   ownProfile: function () {
     return this._id === Meteor.userId();
+  },
+  unreadMessages: function () {
+    Meteor.subscribe("SellOffer");
+    return Messages.find({owner:Meteor.user().username, viewed:false}).count();
   }
 });
 

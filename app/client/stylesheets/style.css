@@ -16,6 +16,19 @@ body {
   color: #122b40;
   margin-left: 4px;
 }
+
+#unread-badge2 {
+  border-radius: 6px;
+  margin-left: 4px;
+  background-color: steelblue;
+}
+
+.offer-badge {
+  border-radius: 6px;
+  margin-left: 4px;
+  background-color: lightslategray;
+}
+
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
     color: whitesmoke;
