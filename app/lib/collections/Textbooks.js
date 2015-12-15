@@ -8,7 +8,6 @@ Meteor.methods({
    * @param doc The Textbook document.
    */
   addTextbook: function (doc) {
-
     if (Roles.userIsInRole(Meteor.user(), "admin") === false) {
       throw new Meteor.Error(403, "Permission Denied");
     }
@@ -35,20 +34,31 @@ Meteor.methods({
       throw new Meteor.Error(403, "Permission Denied");
     }
 
-    console.log("doc");
-    console.log(doc);
-    console.log("docID");
-    console.log(docID);
-
     var image = "http://images.amazon.com/images/P/" + doc.$set.isbn10 + ".01.LZ.jpg";
-
+    var pre = Textbook.findOne({_id: docID});
+    
     doc.$set.coverimage = image;
-    if (Meteor.call("checkTextbook", doc) === false) {
-      throw new Meteor.Error("Invalid Edit");
+
+    if(doc.$set.title != pre.title) {
+      if(Meteor.call("checkTitle", doc.$set) === false) {
+        throw new Meteor.Error("Invalid Edit");
+      }
     }
-    else {
-      Textbook.update({_id: docID}, doc);
+
+    if(doc.$set.isbn13 != pre.isbn13) {
+      if(Meteor.call("checkISBN13", doc.$set) === false) {
+        throw new Meteor.Error("Invalid Edit");
+      }
     }
+
+    if(doc.$set.isbn10 != pre.isbn10) {
+      if(Meteor.call("checkISBN10", doc.$set) === false) {
+        throw new Meteor.Error("Invalid Edit");
+      }
+    }
+
+    Textbook.update({_id: docID}, doc);
+
 
   },
   /**
@@ -62,30 +72,44 @@ Meteor.methods({
     }
 
     var valid = true;
+    if(Meteor.call("checkTitle", doc) === false) {
+      valid = false;
+    }
+    if(Meteor.call("checkISBN13", doc) === false) {
+      valid = false;
+    }
+    if(Meteor.call("checkISBN10", doc) === false) {
+      valid = false;
+    }
+
+    return valid;
+  },
+  checkTitle: function(doc) {
     if (_.findWhere(Textbook.find().fetch(), {title: doc.title})) {
       if (Meteor.isClient) {
         alert("Book Title exists");
       }
-      valid = false;
+      return false;
     }
-
+    return true;
+  },
+  checkISBN13: function(doc) {
     if (_.findWhere(Textbook.find().fetch(), {isbn13: doc.isbn13})) {
       if (Meteor.isClient) {
         alert("Book ISBN13 exists");
       }
-      valid = false;
-
+      return false;
     }
-
+    return true;
+  },
+  checkISBN10: function(doc) {
     if (_.findWhere(Textbook.find().fetch(), {isbn10: doc.isbn10})) {
       if (Meteor.isClient) {
         alert("Book ISBN10 exists");
       }
-      valid = false;
-
+      return false;
     }
-
-    return valid;
+    return true;
   },
   deleteTextbook: function (docID) {
     Textbook.remove(docID);
