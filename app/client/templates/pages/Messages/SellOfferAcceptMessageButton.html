@@ -1,0 +1,9 @@
+<template name="SellOfferAcceptMessageButton">
+  {{#if noExistingAccept}}
+  <form style="display: inline" class="selloffer-accept-message">
+    <input class="btn btn-primary" type="submit" value="Accept">
+  </form>
+  {{else}}
+  <br><b>Contact:</b> {{email}}
+  {{/if}}
+</template>

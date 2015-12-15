@@ -3,8 +3,8 @@
  */
 Meteor.publish("Messages", function () {
   if (this.userId) {
-    var username = Meteor.users.find({_id: this.userId}).username;
-    return Messages.find({owner: username});
+    var user = Meteor.users.find({_id: this.userId}).fetch();
+    return Messages.find({$or: [{owner:user[0].username}, {sender:user[0].username}]});
   }
 });
 
@@ -25,11 +25,16 @@ Meteor.methods({
 
     check(message, Messages.simpleSchema());
 
-    if (!Messages.findOne(message)) {
-      Messages.insert(message);
+    if (Messages.findOne({
+        owner: message.owner,
+        title: message.title,
+        sender: message.sender,
+        offerType: message.offerType,
+        acceptMessage: message.acceptMessage})) {
+      throw new Meteor.Error("Message already exists.");
     }
     else {
-      throw new Meteor.Error("Message already exists.");
+      Messages.insert(message);
     }
   },
   sendSellOfferMessage: function (offer) {
@@ -48,11 +53,16 @@ Meteor.methods({
 
     check(message, Messages.simpleSchema());
 
-    if (!Messages.findOne(message)) {
-      Messages.insert(message);
+    if (Messages.findOne({
+        owner: message.owner,
+        title: message.title,
+        sender: message.sender,
+        offerType: message.offerType,
+        acceptMessage: message.acceptMessage})) {
+      throw new Meteor.Error("Message already exists.");
     }
     else {
-      throw new Meteor.Error("Message already exists.");
+      Messages.insert(message);
     }
   },
   confirmBuyOfferMessage: function (messageinfo) {
@@ -60,7 +70,7 @@ Meteor.methods({
 
     var message = {
       owner: messageinfo.sender,
-      title: messageinfo.book,
+      title: messageinfo.title,
       offer: messageinfo.offer,
       sender: student,
       email: Meteor.user().emails[0].address,
@@ -71,11 +81,16 @@ Meteor.methods({
 
     check(message, Messages.simpleSchema());
 
-    if (!Messages.findOne(message)) {
-      Messages.insert(message);
+    if (Messages.findOne({
+        owner: message.owner,
+        title: message.title,
+        sender: message.sender,
+        offerType: message.offerType,
+        acceptMessage: message.acceptMessage})) {
+      throw new Meteor.Error("Message already exists.");
     }
     else {
-      throw new Meteor.Error("Message already exists.");
+      Messages.insert(message);
     }
   },
   confirmSellOfferMessage: function(messageinfo) {
@@ -83,22 +98,27 @@ Meteor.methods({
 
     var message = {
       owner: messageinfo.sender,
-      title: messageinfo.book,
+      title: messageinfo.title,
       offer: messageinfo.offer,
       sender: student,
       email: Meteor.user().emails[0].address,
-      offerType: "buy",
+      offerType: "sell",
       acceptMessage: true,
       viewed: false
     };
 
     check(message, Messages.simpleSchema());
 
-    if (!Messages.findOne(message)) {
-      Messages.insert(message);
+    if (Messages.findOne({
+        owner: message.owner,
+        title: message.title,
+        sender: message.sender,
+        offerType: message.offerType,
+        acceptMessage: message.acceptMessage})) {
+      throw new Meteor.Error("Message already exists.");
     }
     else {
-      throw new Meteor.Error("Message already exists.");
+      Messages.insert(message);
     }
   }
 });

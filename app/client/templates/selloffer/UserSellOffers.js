@@ -3,10 +3,20 @@
  */
 Template.UserSellOffers.helpers({
   ownPage: function () {
-    return this._id === Meteor.userId();
+    if(Meteor.user()) {
+      return this._id === Meteor.userId();
+    }
+    else {
+      return false;
+    }
   },
   ownOffer: function () {
-    return this.student === Meteor.user().username;
+    if(Meteor.user()) {
+      return this.student === Meteor.user().username;
+    }
+    else {
+      return false;
+    }
   },
   sellofferList: function () {
     return SellOffer.find({student: this.username});

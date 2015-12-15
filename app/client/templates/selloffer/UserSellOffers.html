@@ -1,35 +1,37 @@
 <template name="UserSellOffers">
   <h1>Sell Offers</h1>
-  <table class="table table-striped" style="text-align: center">
-    <thead>
-    <tr>
-      <th>Book</th>
-      <th>Offer</th>
-      <th>Expiration</th>
-      <th>Condition</th>
-      {{#if currentUser}}
-      <th></th>
-      {{/if}}
-    </tr>
-    </thead>
+  <div class="table-responsive">
+    <table class="table table-striped" style="text-align: center">
+      <thead>
+      <tr>
+        <th>Book</th>
+        <th>Offer</th>
+        <th>Expiration</th>
+        <th>Condition</th>
+        {{#if currentUser}}
+        <th></th>
+        {{/if}}
+      </tr>
+      </thead>
 
-    <tbody>
-    {{#each sellofferList}}
-    <tr>
-      <td>{{book}}</td>
-      <td>{{offer}}</td>
-      <td>{{formatDate expiration}}</td>
-      <td>{{condition}}</td>
-      {{#if ownOffer}}
-      <td><a class="btn btn-default" href="{{pathFor 'EditSellOffer'}}">Edit</a>
-        <a class="btn btn-default delete" href="#">Delete</a></td>
-      {{else}}
-      {{#if currentUser}}
-      <td><a class="btn btn-default" href="#">Make Offer</a></td>
-      {{/if}}
-      {{/if}}
-    </tr>
-    {{/each}}
-    </tbody>
-  </table>
+      <tbody>
+      {{#each sellofferList}}
+      <tr>
+        <td>{{book}}</td>
+        <td>{{offer}}</td>
+        <td>{{formatDate expiration}}</td>
+        <td>{{condition}}</td>
+        {{#if ownOffer}}
+        <td><a class="btn btn-default" href="{{pathFor 'EditSellOffer'}}">Edit</a>
+          <a class="btn btn-default delete" href="#">Delete</a></td>
+        {{else}}
+        {{#if currentUser}}
+        <td>{{> SellOfferMessageButton}}</td>
+        {{/if}}
+        {{/if}}
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
 </template>

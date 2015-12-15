@@ -2,7 +2,9 @@
   <ul class="nav nav-tabs" role="tablist" id="user-offer-tabs">
     <li role="presentation" class="active"><a href="#user-buy" aria-controls="user-buy" role="tab" data-toggle="tab">Buy Offers</a></li>
     <li role="presentation"><a href="#user-sell" aria-controls="user-sell" role="tab" data-toggle="tab">Sell Offers</a></li>
+    {{#if ownProfile}}
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    {{/if}}
   </ul>
 
   <div class="tab-content">
@@ -20,6 +22,7 @@
         </div>
       </div>
     </div>
+    {{#if ownProfile}}
     <div role="tabpanel" class="tab-pane fade" id="messages">
       <div class="panel panel-default">
         <div class="panel-body">
@@ -27,5 +30,6 @@
         </div>
       </div>
     </div>
+    {{/if}}
   </div>
 </template>

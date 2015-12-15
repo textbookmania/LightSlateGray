@@ -3,7 +3,21 @@
     {{#each getMessages}}
       <div class="panel panel-default">
         <div class="panel-body">
-          {{student}}
+          {{#if isSellMessage}}
+          <span><b>BUYER:</b> <a href="{{ pathFor 'ProfilePage' data=getSender }}"><b>{{sender}}</b></a> offers to buy your textbook, <a href="{{ pathFor 'TextbookOffer' data=getTextbook }}"><b>{{title}}</b></a>, for ${{offer}}.
+            {{> SellOfferAcceptMessageButton}}</span>
+          {{/if}}
+          {{#if isAcceptSellMessage}}
+          <span><b>SELLER:</b> <a href="{{ pathFor 'ProfilePage' data=getSender }}"><b>{{sender}}</b></a> has accepted your buy offer for <a href="{{ pathFor 'TextbookOffer' data=getTextbook }}"><b>{{title}}</b></a> at ${{offer}}.<br>
+            <b>Contact:</b> {{email}}</span>
+          {{/if}}
+          {{#if isBuyMessage}}
+          <span><b>SELLER:</b> <a href="{{ pathFor 'ProfilePage' data=getSender }}"><b>{{sender}}</b></a> offers to sell you their textbook, <a href="{{ pathFor 'TextbookOffer' data=getTextbook }}"><b>{{title}}</b></a>, for ${{offer}}. {{> BuyOfferAcceptMessageButton}}</span>
+          {{/if}}
+          {{#if isAcceptBuyMessage}}
+          <span><b>BUYER:</b> <a href="{{ pathFor 'ProfilePage' data=getSender }}"><b>{{sender}}</b></a> has accepted your sell offer for <a href="{{ pathFor 'TextbookOffer' data=getTextbook }}"><b>{{title}}</b></a> at ${{offer}}.<br>
+            <b>Contact:</b> {{email}}</span>
+          {{/if}}
         </div>
       </div>
     {{/each}}
