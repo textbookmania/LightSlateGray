@@ -102,6 +102,10 @@
   margin: 0 auto;
 }
 
+#ListTextbookRow.row:hover {
+  background-color: #ddd;
+}
+
 .AddTextbookContainer {
   border-color: transparent;
   background-color: transparent;

@@ -10,7 +10,8 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('ListTextbook');
+      var postDoc = Textbook.findOne({_id: this.docId});
+      Router.go('TextbookOffer', {_title: postDoc.title});
     }
   }
 });

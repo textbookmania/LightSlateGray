@@ -56,7 +56,6 @@ Meteor.methods({
         throw new Meteor.Error("Invalid Edit");
       }
     }
-
     Textbook.update({_id: docID}, doc);
 
 
