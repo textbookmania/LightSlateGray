@@ -44,7 +44,11 @@ Router.route("/profile/:username", {
   name: 'ProfilePage',
 
   waitOn:function(){
-    return Meteor.subscribe("userProfile",this.params.username);
+    return [
+      Meteor.subscribe("userProfile",this.params.username),
+      Meteor.subscribe("Messages")
+    ]
+
   },
   data:function(){
     var username=Router.current().params.username;

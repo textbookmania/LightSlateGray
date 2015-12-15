@@ -1,0 +1,35 @@
+<template name="UserBuyOffers">
+  <h1>Buy Offers</h1>
+  <table class="table table-striped" style="text-align: center">
+    <thead>
+    <tr>
+      <th>Book</th>
+      <th>Offer</th>
+      <th>Expiration</th>
+      <th>Condition</th>
+      {{#if currentUser}}
+      <th></th>
+      {{/if}}
+    </tr>
+    </thead>
+
+    <tbody>
+    {{#each buyofferList}}
+    <tr>
+      <td>{{book}}</td>
+      <td>{{offer}}</td>
+      <td>{{formatDate expiration}}</td>
+      <td>{{condition}}</td>
+      {{#if ownOffer}}
+      <td><a class="btn btn-default" href="{{pathFor 'EditBuyOffer'}}">Edit</a>
+      <a class="btn btn-default delete" href="#">Delete</a></td>
+      {{else}}
+      {{#if currentUser}}
+      <td><a class="btn btn-default" href="#">Make Offer</a></td>
+      {{/if}}
+      {{/if}}
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</template>

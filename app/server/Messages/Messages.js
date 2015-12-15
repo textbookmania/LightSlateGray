@@ -2,8 +2,9 @@
  * Created by Rory on 12/14/2015.
  */
 Meteor.publish("Messages", function () {
-  if (Meteor.user()) {
-    return Messages.find({})
+  if (this.userId) {
+    var username = Meteor.users.find({_id: this.userId}).username;
+    return Messages.find({owner: username});
   }
 });
 

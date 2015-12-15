@@ -13,7 +13,7 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('YourSellOffer');
+      Router.go('ProfilePage', {username:Meteor.user().username});
     }
   }
 });
